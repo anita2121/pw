@@ -21,7 +21,7 @@ body {
 }
 
 .title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -36,29 +36,44 @@ body {
 }
 
 .logo img {
-    width: 150px;
+    width: 120px;
     margin-top: 10px;
 }
 
-/* DESKRIPSI */
-.desc {
-    text-align: center;
-    padding: 20px;
+/* DESKRIPSI BOX */
+.desc-box {
+    border: 1px solid #d2a679;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
     font-size: 14px;
 }
 
-/* SECTION */
-.section {
-    padding: 20px;
+/* VISI MISI */
+.visi-misi-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 20px;
+    flex-wrap: wrap;
 }
 
-.section h2 {
+.card {
+    background: linear-gradient(135deg, #e6c79c, #d2a679);
+    padding: 25px;
+    width: 250px;
+    border-radius: 25px;
     text-align: center;
-    margin-bottom: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-.section ul {
-    padding-left: 20px;
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card ul {
+    text-align: left;
+    padding-left: 15px;
 }
 
 /* SIDE MENU */
@@ -104,64 +119,42 @@ body {
 
 <!-- LOGO -->
 <div class="logo">
-    <img src="poto1.jpeg" alt="Logo Dear Space">
+    <img src="poto1.png" alt="Logo Dear Space">
 </div>
 
 <!-- DESKRIPSI -->
-<div class="desc">
-    Dear Space adalah jasa dekorasi ruang yang menciptakan suasana nyaman, estetik, dan penuh makna.
+<div class="desc-box">
+    <p><b>Dear Space</b> adalah sebuah jasa dekorasi ruang yang berfokus pada menciptakan suasana yang nyaman, estetik, dan penuh makna di setiap ruangan.</p>
+    <p>Kami percaya bahwa setiap ruang memiliki cerita, dan melalui desain yang tepat, ruang tersebut dapat menjadi tempat yang lebih hidup, hangat, dan menyenangkan untuk digunakan sehari-hari.</p>
 </div>
 
 <!-- VISI MISI -->
-<div class="section">
-    <h2>Visi & Misi</h2>
-    <p><b>Visi:</b><br>
-    Menjadi jasa dekorasi ruang yang kreatif, inovatif, dan terpercaya dalam menciptakan ruang yang nyaman, estetik, serta memiliki nilai emosional.</p>
+<div class="visi-misi-container">
 
-    <p><b>Misi:</b></p>
-    <ul>
-        <li>Memberikan desain yang menarik dan sesuai tren</li>
-        <li>Mengutamakan kenyamanan dan kepuasan pelanggan</li>
-        <li>Menyediakan konsep dekorasi yang personal</li>
-        <li>Menggunakan elemen dekorasi berkualitas</li>
-    </ul>
-</div>
+    <div class="card">
+        <h3>VISI</h3>
+        <p>
+            Menjadi jasa dekorasi ruang yang kreatif, inovatif, dan terpercaya 
+            dalam menciptakan ruang yang nyaman, estetik, serta memiliki nilai emosional 
+            bagi setiap pelanggan.
+        </p>
+    </div>
 
-<!-- LAYANAN -->
-<div class="section">
-    <h2>Layanan Kami</h2>
-    <ul>
-        <li>Dekorasi Kamar Tidur</li>
-        <li>Dekorasi Ruang Kerja</li>
-        <li>Dekorasi Ruang Tamu</li>
-        <li>Dekorasi Acara</li>
-        <li>Custom Dekorasi</li>
-    </ul>
-</div>
+    <div class="card">
+        <h3>MISI</h3>
+        <ul>
+            <li>Memberikan layanan dekorasi ruang dengan desain yang menarik, modern, dan sesuai tren.</li>
+            <li>Mengutamakan kenyamanan dan kepuasan pelanggan dalam setiap hasil dekorasi.</li>
+        </ul>
+    </div>
 
-<!-- KONSEP -->
-<div class="section">
-    <h2>Konsep Desain</h2>
-    <ul>
-        <li>Minimalis</li>
-        <li>Aesthetic</li>
-        <li>Korean Style</li>
-        <li>Earth Tone</li>
-    </ul>
-</div>
-
-<!-- KONTAK -->
-<div class="section">
-    <h2>Kontak</h2>
-    <p>📱 WhatsApp: 08xxxxxxxxxx</p>
-    <p>📷 Instagram: @dearspace.id</p>
 </div>
 
 <!-- SIDE MENU -->
 <div id="menu" class="side-menu">
     <span class="close-btn" onclick="closeMenu()">✖</span>
-    <a href="#layanan">Layanan</a>
-    <a href="#konsep">Konsep</a>
+    <a href="#">Layanan</a>
+    <a href="#">Konsep Desain</a>
 </div>
 
 <script>
