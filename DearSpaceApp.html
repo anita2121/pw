@@ -7,27 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================
-   SISTEM SKALA GOLDEN RATIO (Base: 16px, Ratio: 1.618)
-   ========================================= */
 :root {
     --base-font: 16px;
     --ratio: 1.618;
 
-    /* Skala Font (Golden Ratio) */
-    --font-xs: calc(var(--base-font) / var(--ratio)); /* 9.8px */
-    --font-sm: var(--base-font);                     /* 16px */
-    --font-md: calc(var(--base-font) * var(--ratio)); /* 25.8px */
-    --font-lg: calc(var(--font-md) * var(--ratio));   /* 41.8px */
+    --font-xs: calc(var(--base-font) / var(--ratio));
+    --font-sm: var(--base-font);
+    --font-md: calc(var(--base-font) * var(--ratio));
+    --font-lg: calc(var(--font-md) * var(--ratio));
 
-    /* Skala Spasi (Golden Ratio Padding/Margin) */
     --space-xs: 10px;
     --space-sm: 16px;
-    --space-md: 26px; /* 16 * 1.618 */
-    --space-lg: 42px; /* 26 * 1.618 */
-    --space-xl: 68px; /* 42 * 1.618 */
+    --space-md: 26px;
+    --space-lg: 42px;
+    --space-xl: 68px;
 
-    /* Warna */
     --bg-color: #f5f0eb;
     --text-color: #4a3f35;
     --primary-color: #d2a679;
@@ -35,9 +29,6 @@
     --accent-color: #d2b48c;
 }
 
-/* =========================================
-   RESET & DASAR
-   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -49,7 +40,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-size: var(--font-sm);
-    line-height: var(--ratio); /* Golden Ratio Line Height */
+    line-height: var(--ratio);
     padding-bottom: var(--space-xl);
 }
 
@@ -62,46 +53,40 @@ p {
     margin-bottom: var(--space-sm);
 }
 
-/* =========================================
-   TATA LETAK & KOMPONEN
-   ========================================= */
-
-/* HEADER & HERO */
-.header {
-    text-align: center;
-    padding: var(--space-lg) var(--space-sm);
-    font-size: var(--font-lg); /* Golden Ratio Font */
-    font-weight: 700;
-}
-
+/* LOGO DI ATAS */
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: var(--space-xl); /* Jarak besar berdasarkan rasio */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .logo img {
-    width: 130px; /* Sedikit diperbesar agar proporsional */
+    width: 130px;
 }
 
-/* DESKRIPSI (Gaya Kartu Modern) */
+/* JUDUL */
+.header {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    font-size: var(--font-lg);
+    font-weight: 700;
+}
+
+/* DESKRIPSI */
 .desc-box {
     background: white;
     border: 1px solid rgba(210, 166, 121, 0.3);
     margin: 0 auto var(--space-xl) auto;
-    padding: var(--space-lg); /* Jarak dalam menggunakan rasio */
+    padding: var(--space-lg);
     width: 90%;
-    max-width: 800px; /* Membatasi lebar agar teks nyaman dibaca */
+    max-width: 800px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(74, 63, 53, 0.05);
 }
 
-.desc-box p:last-child {
-    margin-bottom: 0;
-}
-
-/* VISI MISI (GRID) */
+/* VISI MISI */
 .visi-misi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -133,7 +118,7 @@ p {
     margin-top: var(--space-sm);
 }
 
-/* LAYANAN (CONTAINER) */
+/* LAYANAN */
 .section {
     text-align: center;
     margin-bottom: var(--space-xl);
@@ -146,7 +131,8 @@ p {
 
 .list-box-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
 .list-box {
@@ -172,10 +158,13 @@ p {
 
 /* KONTAK */
 .kontak {
-    text-align: center;
-    padding: var(--space-xl) var(--space-sm);
+    text-align: left;
+    padding: var(--space-xl) 30px;
     background-color: var(--secondary-color);
     margin-top: var(--space-xl);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .kontak h2 {
@@ -187,13 +176,14 @@ p {
     margin-bottom: var(--space-xs);
 }
 
-/* RESPONSIVE ADJUSTMENT */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     :root {
-        --base-font: 15px; /* Sedikit mengecilkan base font di HP */
+        --base-font: 15px;
     }
+
     .header {
-        font-size: 32px; /* Menyesuaikan agar tidak terlalu besar di HP */
+        font-size: 32px;
     }
 }
 </style>
@@ -201,19 +191,23 @@ p {
 
 <body>
 
-<div class="header">Dear Space</div>
-
+<!-- LOGO -->
 <div class="hero">
     <div class="logo">
         <img src="poto1.jpeg" alt="Logo Dear Space">
     </div>
 </div>
 
+<!-- JUDUL -->
+<div class="header">Dear Space</div>
+
+<!-- DESKRIPSI -->
 <div class="desc-box">
     <p><b>Dear Space</b> adalah jasa dekorasi ruang yang menciptakan suasana nyaman, estetik, dan penuh makna.</p>
     <p>Kami percaya setiap ruang memiliki cerita dan dapat menjadi tempat yang lebih hidup dan menyenangkan.</p>
 </div>
 
+<!-- VISI MISI -->
 <div class="visi-misi">
     <div class="card">
         <h3>VISI</h3>
@@ -233,6 +227,7 @@ p {
     </div>
 </div>
 
+<!-- LAYANAN -->
 <div class="section">
     <h2>Layanan & Konsep</h2>
     <div class="list-box-container">
@@ -256,6 +251,7 @@ p {
     </div>
 </div>
 
+<!-- KONTAK -->
 <div class="kontak">
     <h2>Kontak Kami</h2>
     <p>📱 0812-3456-7890</p>
