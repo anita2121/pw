@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dear Space - Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --base-font: 16px;
+    --ratio: 1.618;
+
+    /* FONT */
+    --font-sm: var(--base-font);
+    --font-md: calc(var(--base-font) * var(--ratio));
+    --font-lg: calc(var(--font-md) * var(--ratio));
+
+    /* SPACING */
+    --space-sm: 16px;
+    --space-md: 26px;
+    --space-lg: 42px;
+    --space-xl: 68px;
+
+    /* COLOR 60-30-10 */
+    --bg-color: #f5f0eb;       /* 60% */
+    --secondary-color: #e6c79c; /* 30% */
+    --accent-color: #c68b59;    /* 10% */
+    --text-color: #4a3f35;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: var(--ratio);
+}
