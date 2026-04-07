@@ -29,7 +29,7 @@ public class DearSpaceApp extends JFrame {
         add(menuBtn);
 
         // ===== LOGO =====
-        ImageIcon logo = new ImageIcon("dearspace_logo.png"); // pastikan file ada
+        ImageIcon logo = new ImageIcon("poto1.jpeg"); // pastikan file ada
         JLabel logoLabel = new JLabel(logo);
         logoLabel.setBounds(125, 80, 150, 150); // posisi tengah
         add(logoLabel);
