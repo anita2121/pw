@@ -43,3 +43,53 @@ body {
     color: var(--text-color);
     line-height: var(--ratio);
 }
+
+    /* HERO (LOGO ATAS) */
+.hero {
+    text-align: center;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* JUDUL */
+.header {
+    text-align: center;
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: var(--space-xl);
+}
+
+/* DESKRIPSI */
+.desc-box {
+    background: white;
+    margin: auto;
+    padding: var(--space-lg);
+    width: 90%;
+    max-width: 750px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: var(--space-xl);
+}
+
+/* VISI MISI */
+.visi-misi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    width: 90%;
+    margin: auto;
+    margin-bottom: var(--space-xl);
+}
+
+.card {
+    background: linear-gradient(135deg, var(--secondary-color), #f0d4b2);
+    padding: var(--space-md);
+    border-radius: 20px;
+    border-left: 6px solid var(--accent-color);
+    transition: 0.3s;
+}
