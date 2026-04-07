@@ -15,19 +15,10 @@ body {
 
 /* HEADER */
 .header {
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
     padding: 20px;
-}
-
-.title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-}
-
-.menu-btn {
-    font-size: 24px;
-    cursor: pointer;
 }
 
 /* LOGO */
@@ -37,7 +28,6 @@ body {
 
 .logo img {
     width: 120px;
-    margin-top: 10px;
 }
 
 /* DESKRIPSI */
@@ -67,13 +57,27 @@ body {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-.card h3 {
-    margin-bottom: 15px;
-}
-
 .card ul {
     text-align: left;
     padding-left: 15px;
+}
+
+/* LAYANAN + KONSEP */
+.section {
+    padding: 30px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+.list-box {
+    background-color: #f0e6dc;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: left;
 }
 
 /* KONTAK */
@@ -83,47 +87,13 @@ body {
     background-color: #f0e6dc;
     margin-top: 20px;
 }
-
-/* SIDE MENU */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #d2b48c;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-menu a {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: black;
-}
-
-.side-menu a:hover {
-    background-color: #c19a6b;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 20px;
-    cursor: pointer;
-}
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-<div class="header">
-    <div class="title">Dear Space</div>
-    <div class="menu-btn" onclick="openMenu()">☰</div>
-</div>
+<div class="header">Dear Space</div>
 
 <!-- LOGO -->
 <div class="logo">
@@ -158,6 +128,30 @@ body {
 
 </div>
 
+<!-- LAYANAN + KONSEP -->
+<div class="section">
+    <h2>Layanan & Konsep Desain</h2>
+
+    <div class="list-box">
+        <b>Layanan:</b>
+        <ul>
+            <li>Dekorasi Kamar Tidur</li>
+            <li>Dekorasi Ruang Kerja</li>
+            <li>Dekorasi Ruang Tamu</li>
+            <li>Dekorasi Acara</li>
+            <li>Custom Dekorasi</li>
+        </ul>
+
+        <b>Konsep Desain:</b>
+        <ul>
+            <li>Minimalis</li>
+            <li>Aesthetic</li>
+            <li>Korean Style</li>
+            <li>Earth Tone</li>
+        </ul>
+    </div>
+</div>
+
 <!-- KONTAK -->
 <div class="kontak">
     <h2>Kontak Kami</h2>
@@ -168,23 +162,6 @@ body {
     <h3>Alamat</h3>
     <p>Jl. Contoh No.123, Tangerang, Banten, Indonesia</p>
 </div>
-
-<!-- SIDE MENU -->
-<div id="menu" class="side-menu">
-    <span class="close-btn" onclick="closeMenu()">✖</span>
-    <a href="#">Layanan</a>
-    <a href="#">Konsep Desain</a>
-</div>
-
-<script>
-function openMenu() {
-    document.getElementById("menu").style.right = "0";
-}
-
-function closeMenu() {
-    document.getElementById("menu").style.right = "-250px";
-}
-</script>
 
 </body>
 </html>
