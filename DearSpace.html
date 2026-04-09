@@ -118,6 +118,32 @@ body {
     display: block;
     border-radius: 20px;
 }
+
+    .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE HP */
+@media(max-width:600px){
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
     
 /* LAYANAN */
 .section {
@@ -213,6 +239,18 @@ body {
             <source src="video1.mp4" type="video/mp4">
             Browser kamu tidak mendukung video.
         </video>
+    </div>
+</div>
+
+<!-- GALERI FOTO -->
+<div class="section">
+    <h2>Hasil Dekorasi Lainnya</h2>
+
+    <div class="gallery">
+        <img src="foto2.jpg" alt="foto2">
+        <img src="foto3.jpg" alt="foto3">
+        <img src="foto4.jpg" alt="foto4">
+        <img src="foto5.jpg" alt="foto5">
     </div>
 </div>
     
