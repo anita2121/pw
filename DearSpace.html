@@ -8,29 +8,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+html {
+    scroll-behavior: smooth; /* 🔥 biar scroll halus */
+}
+
 :root {
     --base-font: 16px;
     --ratio: 1.618;
 
-    /* FONT */
-    --font-sm: var(--base-font);
     --font-md: calc(var(--base-font) * var(--ratio));
     --font-lg: calc(var(--font-md) * var(--ratio));
 
-    /* SPACING */
     --space-sm: 16px;
     --space-md: 26px;
     --space-lg: 42px;
     --space-xl: 68px;
 
-    /* COLOR 60-30-10 */
-    --bg-color: #f5f0eb;       /* 60% */
-    --secondary-color: #e6c79c; /* 30% */
-    --accent-color: #c68b59;    /* 10% */
+    --bg-color: #f5f0eb;
+    --secondary-color: #e6c79c;
+    --accent-color: #c68b59;
     --text-color: #4a3f35;
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -41,30 +40,58 @@ body {
     font-family: 'Poppins', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    line-height: var(--ratio);
 }
 
-    /* HERO (LOGO ATAS) */
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 8%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: var(--accent-color);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+/* HERO */
 .hero {
     text-align: center;
     margin-top: var(--space-lg);
-    margin-bottom: var(--space-sm);
 }
 
 .logo img {
     width: 150px;
 }
 
-/* JUDUL */
 .header {
     text-align: center;
     font-size: var(--font-lg);
-    font-weight: 700;
     color: var(--accent-color);
     margin-bottom: var(--space-xl);
 }
 
-/* DESKRIPSI */
+/* BOX */
 .desc-box {
     background: white;
     margin: auto;
@@ -72,7 +99,6 @@ body {
     width: 90%;
     max-width: 750px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     margin-bottom: var(--space-xl);
 }
 
@@ -90,36 +116,23 @@ body {
     background: linear-gradient(135deg, var(--secondary-color), #f0d4b2);
     padding: var(--space-md);
     border-radius: 20px;
-    border-left: 6px solid var(--accent-color);
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
+/* SECTION */
+.section {
     text-align: center;
-    font-size: var(--font-md);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
 }
 
+/* VIDEO */
 .video-box {
     width: 90%;
     max-width: 700px;
     margin: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.video-box video {
-    width: 100%;
-    display: block;
-    border-radius: 20px;
-}
-
-    .gallery {
+/* GALERI */
+.gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
@@ -130,75 +143,45 @@ body {
 .gallery img {
     width: 100%;
     border-radius: 15px;
-    object-fit: cover;
-    transition: 0.3s;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* RESPONSIVE HP */
-@media(max-width:600px){
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-    
 /* LAYANAN */
-.section {
-text-align: center;
-margin-bottom: var(--space-xl);
-}
-
-.section h2 {
-font-size: var(--font-md);
-margin-bottom: var(--space-md);
-}
-
 .list-box {
-background: var(--accent-color);
-color: white;
-display: inline-block;
-padding: var(--space-md) var(--space-lg);
-border-radius: 20px;
-text-align: left;
-transition: 0.3s;
+    background: var(--accent-color);
+    color: white;
+    display: inline-block;
+    padding: var(--space-md);
+    border-radius: 20px;
 }
 
-.list-box:hover {
-transform: scale(1.03);
-}
-
-.list-box ul {
-margin-bottom: var(--space-md);
-}
 .list-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
-.list-box {
-margin: auto; /* ini bikin bener-bener ke tengah */
-}
-
-    /* KONTAK */
+/* KONTAK */
 .kontak {
     background: var(--secondary-color);
     text-align: center;
     padding: var(--space-xl);
 }
 
-.kontak h2 {
-    font-size: var(--font-md);
-    margin-bottom: var(--space-sm);
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #3e3228;
+    color: white;
 }
 
 /* RESPONSIVE */
 @media(max-width:600px){
-    .header {
-        font-size: 30px;
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .list-grid {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -206,67 +189,74 @@ margin: auto; /* ini bikin bener-bener ke tengah */
 
 <body>
 
-<!-- LOGO DULU -->
-<div class="hero">
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>Dear Space</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</div>
+
+<!-- HOME -->
+<div id="home" class="hero">
     <div class="logo">
-        <img src="poto1.jpeg" alt="logo">
+        <img src="poto1.jpeg">
+    </div>
+    <div class="header">Dear Space</div>
+</div>
+
+<!-- TENTANG -->
+<div id="tentang">
+    <div class="desc-box">
+        <p><b>Dear Space</b> adalah jasa dekorasi ruang yang menciptakan suasana nyaman, estetik, dan penuh makna.</p>
+    </div>
+
+    <div class="visi-misi">
+        <div class="card">
+            <h3>VISI</h3>
+            <p>Menjadi jasa dekorasi ruang yang kreatif.</p>
+        </div>
+        <div class="card">
+            <h3>MISI</h3>
+            <ul>
+                <li>Desain modern</li>
+                <li>Nyaman</li>
+                <li>Pelayanan terbaik</li>
+            </ul>
+        </div>
     </div>
 </div>
 
-<!-- JUDUL -->
-<div class="header">Dear Space</div>
-
-<!-- DESKRIPSI -->
-<div class="desc-box">
-    <p><b>Dear Space</b> adalah jasa dekorasi ruang yang menciptakan suasana nyaman, estetik, dan penuh makna.</p>
-    <p>Kami percaya setiap ruang memiliki cerita dan dapat menjadi tempat yang lebih hidup dan menyenangkan.</p>
-</div>
-
-<!-- VISI MISI -->
-<div class="visi-misi">
-    <div class="card">
-        <h3>VISI</h3>
-        <p>Menjadi jasa dekorasi ruang yang kreatif, inovatif, dan terpercaya.</p>
-    </div>
-
-    <div class="card">
-        <h3>MISI</h3>
-        <ul>
-            <li>Desain modern & sesuai tren</li>
-            <li>Mengutamakan kenyamanan</li>
-            <li>Pelayanan terbaik</li>
-        </ul>
-    </div>
-</div>
-
-<!-- VIDEO CONTOH KONSEP -->
-<div class="section">
-    <h2>Contoh Hasil Dekorasi</h2>
+<!-- GALERI -->
+<div id="galeri" class="section">
+    <h2>Galeri</h2>
 
     <div class="video-box">
         <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
+            <source src="video1.mp4">
         </video>
     </div>
-</div>
 
-<!-- GALERI FOTO -->
-<div class="section">
+    <br><br>
+
     <div class="gallery">
-        <img src="foto2.jpg" alt="foto2">
-        <img src="foto3.jpg" alt="foto3">
-        <img src="foto4.jpg" alt="foto4">
-        <img src="foto5.jpg" alt="foto5">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+        <img src="foto5.jpg">
     </div>
 </div>
-    
+
 <!-- LAYANAN -->
-<div class="section">
-    
+<div id="layanan" class="section">
+    <h2>Layanan</h2>
+
     <div class="list-box">
         <div class="list-grid">
-
             <div>
                 <b>Layanan:</b>
                 <ul>
@@ -286,19 +276,21 @@ margin: auto; /* ini bikin bener-bener ke tengah */
                     <li>Earth Tone</li>
                 </ul>
             </div>
-
         </div>
     </div>
-
 </div>
 
-
 <!-- KONTAK -->
-<div class="kontak">
+<div id="kontak" class="kontak">
     <h2>Kontak Kami</h2>
     <p>📱 0812-3456-7890</p>
     <p>📷 @dearspace.id</p>
     <p>📍 Tangerang</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Dear Space | All Rights Reserved
 </div>
 
 </body>
