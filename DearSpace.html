@@ -146,18 +146,39 @@ body {
 }
     
 /* LAYANAN */
-.list-box {
-    background: var(--accent-color);
-    color: white;
-    padding: var(--space-md) var(--space-lg);
-    border-radius: 20px;
-    
-    max-width: 600px;
-    margin: auto;
-
-    text-align: left;
-    transition: 0.3s;
+.section {
+text-align: center;
+margin-bottom: var(--space-xl);
 }
+
+.section h2 {
+font-size: var(--font-md);
+margin-bottom: var(--space-md);
+}
+
+.list-box {
+background: var(--accent-color);
+color: white;
+display: inline-block;
+padding: var(--space-md) var(--space-lg);
+border-radius: 20px;
+text-align: left;
+transition: 0.3s;
+}
+
+.list-box:hover {
+transform: scale(1.03);
+}
+
+.list-box ul {
+margin-bottom: var(--space-md);
+}
+.list-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+}
+
 
     /* KONTAK */
 .kontak {
@@ -238,35 +259,29 @@ body {
 </div>
     
 <!-- LAYANAN -->
-<div class="section">
-    <h2>Layanan & Konsep</h2>
+</div>  <!-- LAYANAN -->  <div class="list-box">  
+    <div class="list-grid">  <div>  
+        <b>Layanan:</b>  
+        <ul>  
+            <li>Dekorasi Kamar</li>  
+            <li>Ruang Kerja</li>  
+            <li>Ruang Tamu</li>  
+            <li>Dekorasi Acara</li>  
+        </ul>  
+    </div>  
 
-    <div class="list-box">
-        <div class="list-grid">
-            
-            <div>
-                <b>Layanan:</b>
-                <ul>
-                    <li>Dekorasi Kamar</li>
-                    <li>Ruang Kerja</li>
-                    <li>Ruang Tamu</li>
-                    <li>Dekorasi Acara</li>
-                </ul>
-            </div>
+    <div>  
+        <b>Konsep:</b>  
+        <ul>  
+            <li>Minimalis</li>  
+            <li>Aesthetic</li>  
+            <li>Korean Style</li>  
+            <li>Earth Tone</li>  
+        </ul>  
+    </div>  
 
-            <div>
-                <b>Konsep:</b>
-                <ul>
-                    <li>Minimalis</li>
-                    <li>Aesthetic</li>
-                    <li>Korean Style</li>
-                    <li>Earth Tone</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
 </div>
+
 
 <!-- KONTAK -->
 <div class="kontak">
