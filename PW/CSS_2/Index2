@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dear Space</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f1ec;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+}
+
+.logo-text {
+    font-weight: 900;
+    font-size: 26px;
+    color: #c97f4f;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* LOGO */
+.logo {
+    display: block;
+    margin: 10px auto 10px; 
+    width: 250px;
+}
+
+/* SECTION */
+.section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* TEKS TENTANG */
+.tentang-text {
+    max-width: 700px;
+    margin: 10px auto 30px;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.tentang-text p {
+    margin-bottom: 15px;
+}
+
+/* VISI MISI */
+.visi-misi {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #e7c3a1;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+}
+
+/* VIDEO */
+.video-box video {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+
+/* GALERI */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 80px;
+    border-radius: 10px;
+}
+
+/* LAYANAN & KONSEP */
+.section-flex {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: #c97f4f;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: 250px;
+    text-align: left;
+}
+
+/* KONTAK */
+.kontak {
+    background: #e2b98f;
+    text-align: center;
+    padding: 30px;
+}
+
+/* FOOTER */
+.footer {
+    background: #4b2e2e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo-text">Dear Space</div>
+
+    <div>
+        <a href="#">Home</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#galeri">Contoh Konsep</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#konsep">Konsep</a>
+        <a href="#kontak">Kontak</a>
+    </div>
+</nav>
+
+<!-- LOGO -->
+<img src="foto1.png" class="logo">
+
+<!-- TENTANG -->
+<div id="tentang" class="section">
+
+    <div class="tentang-text">
+        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
+
+        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang yang terus berkembang, terutama gaya minimalis dan aesthetic yang saat ini banyak diminati. Berawal dari ide sederhana untuk menata ruang agar lebih rapi dan indah, Dear Space kemudian berkembang menjadi layanan dekorasi yang membantu berbagai kebutuhan.</p>
+
+        <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
+    </div>
+
+    <div class="visi-misi">
+        <div class="card">
+            <h3>VISI</h3>
+            <p>Menjadi jasa dekorasi ruang yang kreatif.</p>
+        </div>
+
+        <div class="card">
+            <h3>MISI</h3>
+            <ul>
+                <li>Desain modern</li>
+                <li>Nyaman</li>
+                <li>Pelayanan terbaik</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- GALERI -->
+<div id="galeri" class="section">
+    <h2>Contoh Konsep</h2>
+
+    <div class="video-box">
+        <video controls>
+            <source src="video1.mp4">
+        </video>
+    </div>
+
+    <br><br>
+
+    <div class="gallery">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+        <img src="foto5.jpg">
+    </div>
+</div>
+<!-- LAYANAN & KONSEP -->
+<div class="section">
+    <div class="section-flex">
+        <div id="konsep" class="box">
+            <h3>Konsep</h3>
+            <ul>
+                <li>Minimalis</li>
+                <li>Aesthetic</li>
+                <li>Korean Style</li>
+                <li>Earth Tone</li>
+            </ul>
+        </div>
+        
+        <div id="layanan" class="box">
+            <h3>Layanan</h3>
+            <ul>
+                <li>Dekorasi Kamar</li>
+                <li>Ruang Kerja</li>
+                <li>Ruang Tamu</li>
+                <li>Dekorasi Acara</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- KONTAK -->
+<div id="kontak" class="kontak">
+    <h2>Kontak Kami</h2>
+    <p>📱 0812-3456-7890</p>
+    <p>📷 @dearspace.id</p>
+    <p>📍 Tangerang</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Dear Space | All Rights Reserved
+</div>
+
+</body>
+</html>
