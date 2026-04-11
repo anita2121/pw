@@ -212,7 +212,7 @@ body {
 <!-- HOME -->
 <div id="home" class="hero">
     <div class="logo">
-        <img src="poto1.jpeg">
+        <img src="foto1.jpeg">
     </div>
     <div class="header">Dear Space</div>
 </div>
