@@ -92,6 +92,7 @@ nav a {
 .gallery img {
     width: 80px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* LAYANAN & KONSEP */
@@ -111,6 +112,16 @@ nav a {
     text-align: left;
 }
 
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: white;
+    color: #c97f4f;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 /* KONTAK */
 .kontak {
     background: #e2b98f;
@@ -124,6 +135,46 @@ nav a {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* OVERLAY */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 90;
+}
+
+/* MODAL */
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: none;
+    z-index: 100;
+    text-align: center;
+    width: 300px;
+}
+
+/* TOAST */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    z-index: 999;
 }
 </style>
 
@@ -149,13 +200,10 @@ nav a {
 
 <!-- TENTANG -->
 <div id="tentang" class="section">
-
     <div class="tentang-text">
-        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
-
-        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang yang terus berkembang, terutama gaya minimalis dan aesthetic yang saat ini banyak diminati. Berawal dari ide sederhana untuk menata ruang agar lebih rapi dan indah, Dear Space kemudian berkembang menjadi layanan dekorasi yang membantu berbagai kebutuhan.</p>
-
-        <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
+        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna.</p>
+        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang.</p>
+        <p>Kami menggabungkan konsep minimalis, aesthetic, Korean style, dan earth tone.</p>
     </div>
 
     <div class="visi-misi">
@@ -188,12 +236,13 @@ nav a {
     <br><br>
 
     <div class="gallery">
-        <img src="foto2.jpg">
-        <img src="foto3.jpg">
-        <img src="foto4.jpg">
-        <img src="foto5.jpg">
+        <img src="foto2.jpg" onclick="openModal()">
+        <img src="foto3.jpg" onclick="openModal()">
+        <img src="foto4.jpg" onclick="openModal()">
+        <img src="foto5.jpg" onclick="openModal()">
     </div>
 </div>
+
 <!-- LAYANAN & KONSEP -->
 <div class="section">
     <div class="section-flex">
@@ -215,8 +264,8 @@ nav a {
                 <li>Ruang Tamu</li>
                 <li>Dekorasi Acara</li>
             </ul>
+            <button onclick="openModal()">Pesan Sekarang</button>
         </div>
-
     </div>
 </div>
 
@@ -232,6 +281,44 @@ nav a {
 <div class="footer">
     © 2026 Dear Space | All Rights Reserved
 </div>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeModal()"></div>
+
+<!-- MODAL -->
+<div id="modal">
+    <h2>Form Pemesanan</h2>
+    <p>Pilih layanan yang kamu inginkan</p>
+
+    <button onclick="showToast()">Kirim</button>
+    <br><br>
+    <button onclick="closeModal()">Tutup</button>
+</div>
+
+<!-- TOAST -->
+<div id="toast">Pesanan berhasil dikirim!</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+
+function showToast() {
+    let toast = document.getElementById("toast");
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 3000);
+}
+</script>
 
 </body>
 </html>
