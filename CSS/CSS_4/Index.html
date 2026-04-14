@@ -156,12 +156,43 @@ button {
 #toast.show {
     opacity: 1;
 }
+
+/* MODAL */
+#imgModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#imgModal img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prev { left: 20px; }
+#next { right: 20px; }
+
 </style>
 
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-text">Dear Space</div>
     <div>
@@ -174,42 +205,21 @@ button {
     </div>
 </nav>
 
-<!-- LOGO -->
 <img src="foto1.png" class="logo">
 
-<!-- TENTANG -->
 <div id="tentang" class="section">
     <div class="tentang-text">
-        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna.</p>
-    </div>
-
-    <div class="visi-misi">
-        <div class="card">
-            <h3>VISI</h3>
-            <p>Menjadi jasa dekorasi ruang yang kreatif.</p>
-        </div>
-
-        <div class="card">
-            <h3>MISI</h3>
-            <ul>
-                <li>Desain modern</li>
-                <li>Nyaman</li>
-                <li>Pelayanan terbaik</li>
-            </ul>
-        </div>
+        <p><b>Dear Space</b> adalah jasa dekorasi interior...</p>
     </div>
 </div>
 
-<!-- GALERI -->
 <div id="galeri" class="section">
     <h2>Contoh Konsep</h2>
 
-    <!-- DESKRIPSI -->
     <p id="deskripsi">
         Konsep earth tone menghadirkan suasana hangat dengan warna alami.
     </p>
 
-    <!-- BUTTON -->
     <div>
         <button onclick="ubahKonsep('minimalis')">Minimalis</button>
         <button onclick="ubahKonsep('aesthetic')">Aesthetic</button>
@@ -220,7 +230,7 @@ button {
     <br>
 
     <!-- VIDEO -->
-    <div class="video-box">
+    <div class="video-box" id="videoContainer">
         <video controls>
             <source src="video1.mp4">
         </video>
@@ -228,11 +238,9 @@ button {
 
     <br><br>
 
-    <!-- GAMBAR DINAMIS -->
     <div class="gallery" id="thumbnailContainer"></div>
 </div>
 
-<!-- LAYANAN & KONSEP -->
 <div class="section">
     <div class="section-flex">
         <div id="konsep" class="box">
@@ -257,21 +265,22 @@ button {
     </div>
 </div>
 
-<!-- KONTAK -->
 <div id="kontak" class="kontak">
     <h2>Kontak Kami</h2>
-    <p>📱 0812-3456-7890</p>
-    <p>📷 @dearspace.id</p>
-    <p>📍 Tangerang</p>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    © 2026 Dear Space | All Rights Reserved
+    © 2026 Dear Space
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
+
+<!-- MODAL -->
+<div id="imgModal" onclick="closeImage()">
+    <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
+    <img id="imgPreview">
+    <span id="next" class="nav-btn" onclick="nextImage(event)">❯</span>
+</div>
 
 <script>
 const basePath = "img/";
@@ -280,7 +289,7 @@ const dataKonsep = {
     minimalis: [basePath+"minimalis1.jpeg",basePath+"minimalis2.jpeg",basePath+"minimalis3.jpeg",basePath+"minimalis4.jpeg",basePath+"minimalis5.jpeg"],
     aesthetic: [basePath+"aesthetic1.jpeg",basePath+"aesthetic2.jpeg",basePath+"aesthetic3.jpeg",basePath+"aesthetic4.jpeg",basePath+"aesthetic5.jpeg"],
     koreanstyle: [basePath+"koreanstyle1.jpeg",basePath+"koreanstyle2.jpeg",basePath+"koreanstyle3.jpeg",basePath+"koreanstyle4.jpeg",basePath+"koreanstyle5.jpeg"],
-    earthtone: [basePath+"video1.mp4",basePath+"foto2.jpg",basePath+"foto3.jpg",basePath+"foto4.jpg",basePath+"foto5.jpg"]
+    earthtone: [basePath+"earthtone1.jpeg",basePath+"earthtone2.jpeg",basePath+"earthtone3.jpeg",basePath+"earthtone4.jpeg",basePath+"earthtone5.jpeg"]
 };
 
 const deskripsiKonsep = {
@@ -291,13 +300,26 @@ const deskripsiKonsep = {
 };
 
 let currentImages = dataKonsep.earthtone;
+let index = 0;
 
-window.onload = () => loadImages(currentImages);
+window.onload = () => {
+    loadImages(currentImages);
+    document.getElementById("videoContainer").style.display = "block";
+};
 
 function ubahKonsep(nama) {
     currentImages = dataKonsep[nama];
+
     document.getElementById("deskripsi").innerText = deskripsiKonsep[nama];
+
     loadImages(currentImages);
+
+    if (nama === "earthtone") {
+        document.getElementById("videoContainer").style.display = "block";
+    } else {
+        document.getElementById("videoContainer").style.display = "none";
+    }
+
     showToast("Menampilkan konsep " + nama);
 }
 
@@ -305,11 +327,34 @@ function loadImages(images) {
     let container = document.getElementById("thumbnailContainer");
     container.innerHTML = "";
 
-    images.forEach((img) => {
+    images.forEach((img, i) => {
         let el = document.createElement("img");
         el.src = img;
+        el.onclick = () => openImage(i);
         container.appendChild(el);
     });
+}
+
+function openImage(i) {
+    index = i;
+    document.getElementById("imgModal").style.display = "flex";
+    document.getElementById("imgPreview").src = currentImages[index];
+}
+
+function closeImage() {
+    document.getElementById("imgModal").style.display = "none";
+}
+
+function nextImage(e) {
+    e.stopPropagation();
+    index = (index + 1) % currentImages.length;
+    document.getElementById("imgPreview").src = currentImages[index];
+}
+
+function prevImage(e) {
+    e.stopPropagation();
+    index = (index - 1 + currentImages.length) % currentImages.length;
+    document.getElementById("imgPreview").src = currentImages[index];
 }
 
 function showToast(text) {
