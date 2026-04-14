@@ -22,7 +22,28 @@ nav {
     padding: 15px 30px;
     background: white;
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav div:last-child {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 5px 0;
+    }
+}
+    
 .logo-text {
     font-weight: 900;
     font-size: 26px;
