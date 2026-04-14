@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dear Space</title>
@@ -110,12 +111,41 @@ nav a {
 }
 
 .box {
-    background: #c97f4f;
-    color: white;
-    padding: 25px 35px;
+    background: white;
+    color: #333;
+    padding: 25px;
     border-radius: 20px;
-    width: 300px;
+    width: 320px;
     text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 2px solid #e7c3a1;
+}
+
+.box h3 {
+    text-align: center;
+    color: #c97f4f;
+    margin-bottom: 15px;
+}
+
+.box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.box li {
+    background: #f5f1ec;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.box li:hover {
+    background: #e7c3a1;
+    transform: translateX(5px);
 }
 
 /* KONTAK */
@@ -310,14 +340,14 @@ button:hover {
         <div class="box">
             <h3>Layanan</h3>
             <ul>
-                <li>Dekorasi Kamar</li>
-                <li>Dekorasi Kamar Mandi</li>
-                <li>Dekorasi halaman</li>
-                <li>Dekorasi Ruang Kerja</li>
-                <li>Dekorasi Ruang Tamu</li>
-                <li>Dekorasi Ruang Makan</li>
-                <li>Dekorasi Acara</li>
-                <li>Dekorasi Caffe</li>
+                <li><i class="fa-solid fa-house"></i> Dekorasi Kamar</li>
+                <li><i class="fa-solid fa-bath"></i> Dekorasi Kamar Mandi</li>
+                <li><i class="fa-solid fa-tree"></i> Dekorasi Halaman</li>
+                <li><i class="fa-solid fa-laptop"></i> Dekorasi Ruang Kerja</li>
+                <li><i class="fa-solid fa-couch"></i> Dekorasi Ruang Tamu</li>
+                <li><i class="fa-solid fa-utensils"></i> Dekorasi Ruang Makan</li>
+                <li><i class="fa-solid fa-calendar-check"></i> Dekorasi Acara</li>
+                <li><i class="fa-solid fa-store"></i> Dekorasi Cafe</li>
             </ul>
         </div>
     </div>
