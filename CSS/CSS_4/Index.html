@@ -117,92 +117,83 @@ nav a.active {
     
 /* ===== HP MODE ===== */
 /* ===== MOBILE MODE FIX (FINAL) ===== */
+/* ===== MOBILE FINAL (AMAN, TIDAK MERUSAK DESKTOP) ===== */
 @media (max-width: 768px) {
 
-    /* NAVBAR TETAP 1 BARIS */
+    /* NAVBAR = TETAP SEPERTI AWAL (JANGAN DIUBAH STRUKTURNYA) */
     nav {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
+        padding: 12px 15px;
         width: 100%;
         box-sizing: border-box;
-
-        padding: 10px 12px;
-
-        overflow-x: auto;   /* kalau kepanjangan bisa geser */
-        white-space: nowrap;
     }
 
     nav div:last-child {
         display: flex;
-        flex-wrap: nowrap;
-        gap: 10px;
-        white-space: nowrap;
+        gap: 12px;
     }
 
     nav a {
         font-size: 13px;
-        flex-shrink: 0;
         white-space: nowrap;
     }
 
 
-    /* CONTAINER jadi 1 kolom */
+    /* LAYOUT UTAMA JADI 1 KOLOM */
     .container-layout {
         grid-template-columns: 1fr;
-        padding: 10px;
+        padding: 15px;
+        gap: 15px;
     }
 
 
-    /* SIDEBAR FULL LEBAR (biar nggak kepotong) */
-    .sidebar {
-        width: 100%;
-    }
-
-    .sidebar-box {
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 12px;
-    }
-
-
-    /* KONTEN KIRI */
+    /* MAIN CONTENT FULL */
     .main-content {
         width: 100%;
     }
 
 
-    /* KONTAK FULL LEBAR */
+    /* SIDEBAR TURUN KE BAWAH */
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .sidebar-box {
+        width: 100%;
+        margin: 0;
+        border-radius: 15px;
+    }
+
+
+    /* KONTAK FULL */
     .kontak {
         width: 100%;
+        padding: 20px 15px;
         box-sizing: border-box;
-        padding: 20px 12px;
         text-align: center;
     }
 
 
-    /* FOOTER AMAN */
-    .footer {
-        width: 100%;
-        box-sizing: border-box;
-        position: static; /* biar gak nutup HP */
-    }
-
-
-    /* GAMBAR AMAN */
+    /* LOGO RAPI */
     .logo {
-        display: block;
+        width: 180px;
         margin: 10px auto;
-        width: 250px;
     }
 
 
-    /* TEKS LEBIH RAPI */
+    /* TEKS LEBIH NYAMAN DIBACA */
     .tentang-text {
         font-size: 14px;
         line-height: 1.6;
+    }
+
+
+    /* GALERI LEBIH RAPI */
+    .gallery img {
+        width: 65px;
     }
 
 
