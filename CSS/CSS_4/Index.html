@@ -99,6 +99,21 @@ nav a.active {
     background: #c97f4f;
     color: white;
 }
+
+.container-layout{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+    min-height: 100vh;
+}
+
+.sidebar{
+    position: sticky;
+    top: 80px;
+    align-self: start;
+}
     
 /* ===== HP MODE ===== */
 @media (max-width: 600px) {
@@ -378,15 +393,16 @@ button:hover {
             
       <iframe src="Index2.html" style="
         position:fixed;
+        inset: 0;  
         top:0;
         left:0;
         width:100%;
         height:100%;
         border:none;
-        z-index:0;
+        z-index:-1;
         pointer-events:none;
-      "></iframe>
-        
+      ">
+    
       <nav>
           <div class="logo-text">Dear Space</div>
          <div>
