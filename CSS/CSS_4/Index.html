@@ -6,138 +6,314 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dear Space</title>
 
+
 <style>
-    :root {
-    --ratio: 1.618;
-
-    --base: 1rem;
-
-    --space-1: calc(var(--base) / var(--ratio));
-    --space-2: var(--base);
-    --space-3: calc(var(--base) * var(--ratio));
-    --space-4: calc(var(--space-3) * var(--ratio));
-
-    --text-main: #333;
-    --accent: #c97f4f;
-    --bg: #f5f1ec;
-}
-
 body {
+    
     margin: 0;
     font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text-main);
-    line-height: var(--ratio);
+    background: #f5f1ec;
 }
-
-/* NAVBAR GOLDEN RATIO */
+    
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
 
-    padding: var(--space-2) var(--space-3);
-
-    background: rgba(255,255,255,0.65);
-    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.logo-text {
-    font-weight: 900;
-    font-size: calc(var(--base) * var(--ratio));
-    color: var(--accent);
-}
-
-/* MENU */
+/* MENU KANAN */
 nav div:last-child {
     display: flex;
-    gap: var(--space-2);
+    gap: 20px;
 }
 
+/* LINK NAV */
 nav a {
     text-decoration: none;
-    color: var(--text-main);
-    font-size: var(--base);
-    position: relative;
-    transition: 0.3s;
+    color: #333;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
-
-/* ACTIVE EFFECT */
+/* ACTIVE MENU */
 nav a.active {
-    color: var(--accent);
+    color: #c97f4f;
+    font-weight: bold;
+    border-bottom: 2px solid #c97f4f;
+    padding-bottom: 5px;
 }
 
-nav a.active::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent);
-}
-
-/* SECTION SYSTEM */
-.section {
-    text-align: center;
-    padding: var(--space-4) var(--space-3);
-}
-
-/* TEXT BLOCK */
-.tentang-text {
-    max-width: 750px;
-    margin: auto;
-    text-align: justify;
-    font-size: var(--base);
-}
-
-/* CARD */
-.card {
-    background: #e7c3a1;
-    padding: var(--space-3);
-    border-radius: calc(var(--base));
-    width: 320px;
-}
-
-/* BOX LAYANAN */
-.box {
-    background: #e7c3a1;
-    padding: var(--space-3);
-    border-radius: var(--space-2);
-}
-
-/* FOOTER GOLDEN */
-.footer {
-    background: #4b2e2e;
-    color: white;
-    text-align: center;
-    padding: var(--space-2);
-}
-
-/* RESPONSIVE NAV (HORIZONTAL ONLY) */
+/* ===== HP MODE ===== */
 @media (max-width: 600px) {
     nav {
+        flex-wrap: nowrap;
         overflow-x: auto;
-        white-space: nowrap;
     }
 
     nav div:last-child {
+        display: flex;
         flex-wrap: nowrap;
+        gap: 12px;
     }
 
     nav a {
         font-size: 13px;
         padding: 5px;
+        white-space: nowrap;
     }
-    }
+}
+    
+.logo-text {
+    font-weight: 900;
+    font-size: 26px;
+    color: #c97f4f;
+    line-height: 1;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* LOGO */
+.logo {
+    display: block;
+    margin: 10px auto;
+    width: 250px;
+}
+
+/* SECTION */
+.section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* TEKS */
+.tentang-text {
+    max-width: 750px;
+    margin: 10px auto 40px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* VISI MISI */
+.visi-misi {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #e7c3a1;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #4b2e2e;
+}
+
+.card ul {
+    padding-left: 18px;
+}
+
+/* VIDEO */
+.video-box video {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+
+/* GALERI */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* LAYANAN */
+.section-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    background: #e7c3a1;
+    color: #403131;
+    padding: 25px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 2px solid #e7c3a1;
+}
+
+.box h3 {
+    text-align: center;
+    color: #403131;
+    margin-bottom: 15px;
+}
+
+.box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.box li {
+    background: #f5f1ec;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    color: #403131;
+}
+
+.box li:hover {
+    background: #e7c3a1;
+    transform: translateX(5px);
+}
+
+/* KONTAK */
+.kontak {
+    background: #e2b98f;
+    text-align: center;
+    padding: 30px;
+}
+
+.kontak i {
+    margin-right: 8px;
+    color: #4b2e2e;
+}
+
+/* FOOTER */
+.footer {
+    background: #4b2e2e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* DESKRIPSI */
+#deskripsi {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 14px;
+    color: #555;
+}
+
+/* BUTTON */
+button {
+    margin: 5px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #e7c3a1;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c97f4f;
+    color: white;
+}
+
+.active-btn {
+    background: #c97f4f !important;
+    color: white;
+}
+
+/* TOAST */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+/* MODAL */
+#imgModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#imgModal img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* CLOSE */
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* NAV */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prev { left: 20px; }
+#next { right: 20px; }
+
 </style>
 </head>
 
