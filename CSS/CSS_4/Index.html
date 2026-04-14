@@ -12,7 +12,6 @@ body {
     background: #f5f1ec;
 }
 
-/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -33,20 +32,17 @@ nav a {
     color: #333;
 }
 
-/* LOGO */
 .logo {
     display: block;
     margin: 10px auto 10px; 
     width: 250px;
 }
 
-/* SECTION */
 .section {
     text-align: center;
     padding: 40px 20px;
 }
 
-/* TEKS */
 .tentang-text {
     max-width: 700px;
     margin: 10px auto 30px;
@@ -55,7 +51,6 @@ nav a {
     font-size: 15px;
 }
 
-/* CARD */
 .visi-misi {
     display: flex;
     justify-content: center;
@@ -70,14 +65,12 @@ nav a {
     width: 250px;
 }
 
-/* VIDEO */
 .video-box video {
     width: 90%;
     max-width: 400px;
     border-radius: 15px;
 }
 
-/* GALERI */
 .gallery {
     display: flex;
     justify-content: center;
@@ -91,7 +84,6 @@ nav a {
     cursor: pointer;
 }
 
-/* BOX */
 .section-flex {
     display: flex;
     justify-content: center;
@@ -108,14 +100,12 @@ nav a {
     text-align: left;
 }
 
-/* KONTAK */
 .kontak {
     background: #e2b98f;
     text-align: center;
     padding: 30px;
 }
 
-/* FOOTER */
 .footer {
     background: #4b2e2e;
     color: white;
@@ -123,7 +113,6 @@ nav a {
     padding: 10px;
 }
 
-/* DESKRIPSI */
 #deskripsi {
     max-width: 600px;
     margin: 10px auto;
@@ -131,7 +120,6 @@ nav a {
     color: #555;
 }
 
-/* BUTTON */
 button {
     margin: 5px;
     padding: 8px 14px;
@@ -152,7 +140,6 @@ button:hover {
     color: white;
 }
 
-/* TOAST */
 #toast {
     position: fixed;
     bottom: 20px;
@@ -189,7 +176,6 @@ button:hover {
     border-radius: 10px;
 }
 
-/* CLOSE */
 #closeBtn {
     position: absolute;
     top: 20px;
@@ -199,7 +185,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* NAV */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -211,7 +196,6 @@ button:hover {
 
 #prev { left: 20px; }
 #next { right: 20px; }
-
 </style>
 </head>
 
@@ -233,12 +217,7 @@ button:hover {
 
 <div id="tentang" class="section">
     <div class="tentang-text">
-        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
-
-        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang yang terus berkembang, terutama gaya minimalis dan aesthetic yang saat ini banyak diminati. Berawal dari ide sederhana untuk menata ruang agar lebih rapi dan indah, Dear Space kemudian berkembang menjadi layanan dekorasi yang membantu berbagai kebutuhan.</p>
-
-        <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
-    
+        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna.</p>
     </div>
 </div>
 
@@ -246,14 +225,14 @@ button:hover {
     <h2>Contoh Konsep</h2>
 
     <p id="deskripsi">
-        Konsep earth tone menghadirkan suasana hangat dengan warna alami.
+        Konsep modern klasik menggabungkan kemewahan klasik dengan sentuhan modern.
     </p>
 
     <div>
         <button onclick="ubahKonsep('minimalis', this)">Minimalis</button>
         <button onclick="ubahKonsep('aesthetic', this)">Aesthetic</button>
         <button onclick="ubahKonsep('koreanstyle', this)">Korean Style</button>
-        <button onclick="ubahKonsep('earthtone', this)">Earth Tone</button>
+        <button onclick="ubahKonsep('modernklasik', this)">Modern Klasik</button>
     </div>
 
     <br>
@@ -269,41 +248,8 @@ button:hover {
     <div class="gallery" id="thumbnailContainer"></div>
 </div>
 
-<div class="section">
-    <div class="section-flex">
-        <div id="konsep" class="box">
-            <h3>Konsep</h3>
-            <ul>
-                <li>Minimalis</li>
-                <li>Aesthetic</li>
-                <li>Korean Style</li>
-                <li>Earth Tone</li>
-            </ul>
-        </div>
-        
-        <div id="layanan" class="box">
-            <h3>Layanan</h3>
-            <ul>
-                <li>Dekorasi Kamar</li>
-                <li>Ruang Kerja</li>
-                <li>Ruang Tamu</li>
-                <li>Dekorasi Acara</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div id="kontak" class="kontak">
-    <h2>Kontak Kami</h2>
-</div>
-
-<div class="footer">
-    © 2026 Dear Space
-</div>
-
 <div id="toast"></div>
 
-<!-- MODAL -->
 <div id="imgModal" onclick="closeImage()">
     <span id="closeBtn" onclick="closeImage()">✖</span>
     <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
@@ -318,17 +264,17 @@ const dataKonsep = {
     minimalis: [basePath+"minimalis1.jpeg",basePath+"minimalis2.jpeg",basePath+"minimalis3.jpeg",basePath+"minimalis4.jpeg",basePath+"minimalis5.jpeg"],
     aesthetic: [basePath+"aesthetic1.jpeg",basePath+"aesthetic2.jpeg",basePath+"aesthetic3.jpeg",basePath+"aesthetic4.jpeg",basePath+"aesthetic5.jpeg"],
     koreanstyle: [basePath+"koreanstyle1.jpeg",basePath+"koreanstyle2.jpeg",basePath+"koreanstyle3.jpeg",basePath+"koreanstyle4.jpeg",basePath+"koreanstyle5.jpeg"],
-    earthtone: [basePath+"foto2.jpg",basePath+"foto3.jpg",basePath+"foto4.jpg",basePath+"foto5.jpg"]
+    modernklasik: [basePath+"foto2.jpg",basePath+"foto3.jpg",basePath+"foto4.jpg",basePath+"foto5.jpg"]
 };
 
 const deskripsiKonsep = {
     minimalis: "Konsep minimalis menampilkan ruangan yang sederhana dan rapi.",
     aesthetic: "Konsep aesthetic menghadirkan dekorasi yang unik dan estetik.",
     koreanstyle: "Konsep Korean Style menggunakan warna terang dan nuansa hangat.",
-    earthtone: "Konsep earth tone menghadirkan suasana hangat dengan warna alami."
+    modernklasik: "Konsep modern klasik menggabungkan kemewahan klasik dengan sentuhan modern."
 };
 
-let currentImages = dataKonsep.earthtone;
+let currentImages = dataKonsep.modernklasik;
 let index = 0;
 
 window.onload = () => {
@@ -343,7 +289,7 @@ function ubahKonsep(nama, el) {
 
     loadImages(currentImages);
 
-    if (nama === "earthtone") {
+    if (nama === "modernklasik") {
         document.getElementById("videoContainer").style.display = "block";
     } else {
         document.getElementById("videoContainer").style.display = "none";
