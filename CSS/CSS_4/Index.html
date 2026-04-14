@@ -116,23 +116,33 @@ nav a.active {
 }
     
 /* ===== HP MODE ===== */
-/* ===== MOBILE MODE FIX (FINAL) ===== */
-/* ===== MOBILE FINAL (AMAN, TIDAK MERUSAK DESKTOP) ===== */
 @media (max-width: 768px) {
 
-    /* NAVBAR = TETAP SEPERTI AWAL (JANGAN DIUBAH STRUKTURNYA) */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 15px;
-        width: 100%;
+    /* GLOBAL FIX (WAJIB) */
+    * {
         box-sizing: border-box;
     }
 
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+
+    /* NAVBAR */
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        width: 100%;
+    }
+
+    /* menu kanan paksa mentok */
     nav div:last-child {
         display: flex;
         gap: 12px;
+        margin-left: auto;
     }
 
     nav a {
@@ -141,7 +151,7 @@ nav a.active {
     }
 
 
-    /* LAYOUT UTAMA JADI 1 KOLOM */
+    /* LAYOUT UTAMA */
     .container-layout {
         grid-template-columns: 1fr;
         padding: 15px;
@@ -149,13 +159,13 @@ nav a.active {
     }
 
 
-    /* MAIN CONTENT FULL */
+    /* MAIN CONTENT */
     .main-content {
         width: 100%;
     }
 
 
-    /* SIDEBAR TURUN KE BAWAH */
+    /* SIDEBAR */
     .sidebar {
         width: 100%;
         position: static;
@@ -168,36 +178,41 @@ nav a.active {
     }
 
 
-    /* KONTAK FULL */
+    /* KONTAK (FULL LAYAR FIX) */
     .kontak {
         width: 100%;
         padding: 20px 15px;
         box-sizing: border-box;
         text-align: center;
+        margin: 0;
+
+        /* biar keluar dari padding parent */
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
 
-    /* LOGO RAPI */
+    /* LOGO */
     .logo {
         width: 180px;
         margin: 10px auto;
     }
 
 
-    /* TEKS LEBIH NYAMAN DIBACA */
+    /* TEXT */
     .tentang-text {
         font-size: 14px;
         line-height: 1.6;
     }
 
 
-    /* GALERI LEBIH RAPI */
+    /* GALERI */
     .gallery img {
         width: 65px;
     }
 
 
-    /* VIDEO RESPONSIVE */
+    /* VIDEO */
     .video-box video {
         width: 100%;
         max-width: 100%;
