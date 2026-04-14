@@ -120,17 +120,15 @@ nav a.active {
 
     body {
         margin: 0;
-        padding: 0;
         overflow-x: hidden;
     }
 
-    /* BUKAN ubah layout → cuma rapihin padding */
+    /* BIAR FULL LEBAR */
     .container-layout {
-        grid-template-columns: 1fr;
         padding: 10px;
     }
 
-    /* NAV TETAP HORIZONTAL (JANGAN COLUMN) */
+    /* NAV TETAP 1 BARIS */
     nav {
         width: 100%;
         box-sizing: border-box;
@@ -138,19 +136,22 @@ nav a.active {
     }
 
     nav div:last-child {
-        flex-wrap: wrap;
+        display: flex;
+        flex-wrap: nowrap;   /* JANGAN WRAP */
         gap: 10px;
     }
 
-    /* BIKIN BOX FULL WIDTH */
-    .sidebar-box {
-        margin: 0;
-        border-radius: 0;
+    nav a {
+        font-size: 13px;
+        white-space: nowrap;
     }
 
+    /* BIKIN BOX MENTOK */
+    .sidebar-box,
     .kontak {
+        margin: 0;
+        border-radius: 0;
         width: 100%;
-        padding: 20px 10px;
         box-sizing: border-box;
     }
 }
