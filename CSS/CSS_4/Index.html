@@ -491,38 +491,47 @@ button:hover {
     color: white;
 }
 
-/* POPUP */
-.popup {
-    position: absolute;
-    top: 50%;
-    left: 105%;
-    transform: translateY(-50%) scale(0.8);
-
-    width: 160px;
-    background: white;
-    padding: 10px;
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-}
-
-/* FOTO */
-.popup img {
+#imageModal {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
 }
 
-/* SHOW */
-.member:hover .popup {
+#modalImg {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+
+    transform: scale(0.7);
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+#imageModal.show #modalImg {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(-50%) scale(1);
-    left: calc(100% + 10px);
-    }
+}
+
+#closeImg {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+    display: none; /* penting */
+}
     
 </style>
 </head>
@@ -639,41 +648,10 @@ button:hover {
 
         <div class="team">
         
-            <div class="member">
-                <span>Andi</span>
-                <div class="popup">
-                    <img src="tim1.jpg">
-                    <p><b>Andi</b></p>
-                    <p>NIM: 123456</p>
-                </div>
-            </div>
-        
-            <div class="member">
-                <span>Budi</span>
-                <div class="popup">
-                    <img src="tim2.jpg">
-                    <p><b>Budi</b></p>
-                    <p>NIM: 234567</p>
-                </div>
-            </div>
-        
-            <div class="member">
-                <span>Citra</span>
-                <div class="popup">
-                    <img src="tim3.jpg">
-                    <p><b>Citra</b></p>
-                    <p>NIM: 345678</p>
-                </div>
-            </div>
-        
-            <div class="member">
-                <span>Dina</span>
-                <div class="popup">
-                    <img src="tim4.jpg">
-                    <p><b>Dina</b></p>
-                    <p>NIM: 456789</p>
-                </div>
-            </div>
+            <div class="member" data-img="andi-card.jpg">Andi</div>
+            <div class="member" data-img="budi-card.jpg">Budi</div>
+            <div class="member" data-img="citra-card.jpg">Citra</div>
+            <div class="member" data-img="dina-card.jpg">Dina</div>
         
         </div>
         </div>
@@ -787,13 +765,75 @@ function showToast(text) {
         toast.classList.remove("show");
     }, 2000);
 }
-    document.querySelectorAll(".member").forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("active");
+
+    const members = document.querySelectorAll(".member");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.getElementById("closeImg");
+
+let timeout;
+let isMobile = window.innerWidth <= 768;
+
+members.forEach(member => {
+
+    // DESKTOP (hover)
+    member.addEventListener("mouseenter", () => {
+        if (!isMobile) {
+            openImg(member.dataset.img);
+        }
+    });
+
+    member.addEventListener("mouseleave", () => {
+        if (!isMobile) {
+            timeout = setTimeout(closeImg, 200);
+        }
+    });
+
+    member.addEventListener("mouseenter", () => {
+        clearTimeout(timeout);
+    });
+
+    // MOBILE (click)
+    member.addEventListener("click", () => {
+        if (isMobile) {
+            openImg(member.dataset.img);
+        }
     });
 });
+
+function openImg(img) {
+    modal.style.display = "flex";
+    modalImg.src = img;
+
+    closeBtn.style.display = isMobile ? "block" : "none";
+
+    setTimeout(() => {
+        modal.classList.add("show");
+    }, 10);
+}
+
+function closeImg() {
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 200);
+}
+
+closeBtn.onclick = closeImg;
+
+modal.onclick = function(e) {
+    if (isMobile && e.target === modal) {
+        closeImg();
+    }
+};
     
 </script>
-
+    
+<div id="imageModal">
+    <span id="closeImg">✖</span>
+    <img id="modalImg">
+</div>
+    
 </body>
     </html>
