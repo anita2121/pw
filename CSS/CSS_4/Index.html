@@ -222,6 +222,20 @@ nav a.active {
         width: 100%;
         max-width: 100%;
     }
+    .team {
+    align-items: center;
+   }
+
+   .popup {
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%) scale(0.8);
+   }
+
+   .member.active .popup {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    }
 }
     
 /* LOGO */
@@ -454,6 +468,61 @@ button:hover {
 #prev { left: 20px; }
 #next { right: 20px; }
 
+/* TEAM */
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ITEM */
+.member {
+    position: relative;
+    background: #f5f1ec;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.member:hover {
+    background: #c97f4f;
+    color: white;
+}
+
+/* POPUP */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%) scale(0.8);
+
+    width: 160px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* FOTO */
+.popup img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+/* SHOW */
+.member:hover .popup {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    }
+    
 </style>
 </head>
 
@@ -717,6 +786,12 @@ function showToast(text) {
         toast.classList.remove("show");
     }, 2000);
 }
+    document.querySelectorAll(".member").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+    
 </script>
 
 </body>
