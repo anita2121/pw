@@ -116,43 +116,99 @@ nav a.active {
 }
     
 /* ===== HP MODE ===== */
+/* ===== MOBILE MODE FIX (FINAL) ===== */
 @media (max-width: 768px) {
 
-    body {
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    /* BIAR FULL LEBAR */
-    .container-layout {
-        padding: 10px;
-    }
-
-    /* NAV TETAP 1 BARIS */
+    /* NAVBAR TETAP 1 BARIS */
     nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
         width: 100%;
         box-sizing: border-box;
-        padding: 10px 10px;
+
+        padding: 10px 12px;
+
+        overflow-x: auto;   /* kalau kepanjangan bisa geser */
+        white-space: nowrap;
     }
 
     nav div:last-child {
         display: flex;
-        flex-wrap: nowrap;   /* JANGAN WRAP */
+        flex-wrap: nowrap;
         gap: 10px;
+        white-space: nowrap;
     }
 
     nav a {
         font-size: 13px;
+        flex-shrink: 0;
         white-space: nowrap;
     }
 
-    /* BIKIN BOX MENTOK */
-    .sidebar-box,
-    .kontak {
-        margin: 0;
-        border-radius: 0;
+
+    /* CONTAINER jadi 1 kolom */
+    .container-layout {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+
+    /* SIDEBAR FULL LEBAR (biar nggak kepotong) */
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar-box {
         width: 100%;
         box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+
+    /* KONTEN KIRI */
+    .main-content {
+        width: 100%;
+    }
+
+
+    /* KONTAK FULL LEBAR */
+    .kontak {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 12px;
+        text-align: center;
+    }
+
+
+    /* FOOTER AMAN */
+    .footer {
+        width: 100%;
+        box-sizing: border-box;
+        position: static; /* biar gak nutup HP */
+    }
+
+
+    /* GAMBAR AMAN */
+    .logo {
+        width: 70%;
+        max-width: 250px;
+    }
+
+
+    /* TEKS LEBIH RAPI */
+    .tentang-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* VIDEO RESPONSIVE */
+    .video-box video {
+        width: 100%;
+        max-width: 100%;
     }
 }
     
