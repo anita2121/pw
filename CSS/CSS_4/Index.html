@@ -52,6 +52,31 @@ nav a.active {
     padding-bottom: 5px;
 }
 
+.container-layout{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* sidebar */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-box{
+    background: #e7c3a1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar-box h3{
+    margin-bottom: 10px;
+}
+    
 /* ===== HP MODE ===== */
 @media (max-width: 600px) {
     nav {
@@ -71,7 +96,12 @@ nav a.active {
         white-space: nowrap;
     }
 }
-    
+
+@media (max-width: 768px){
+    .container-layout{
+        grid-template-columns: 1fr;
+    }
+}
 .logo-text {
     font-weight: 900;
     font-size: 26px;
@@ -318,7 +348,11 @@ button:hover {
 </head>
 
 <body>
+<div class="container-layout">
 
+    <!-- KIRI (ISI UTAMA) -->
+<div class="main-content">
+        
 <iframe src="Index2.html" style="
     position:fixed;
     top:0;
@@ -396,25 +430,6 @@ button:hover {
     <div class="gallery" id="thumbnailContainer"></div>
 </div>
 
-<!-- FIX: TAMBAH ID LAYANAN -->
-<div id="layanan" class="section">
-    <div class="section-flex">
-        <div class="box">
-            <h3>Layanan</h3>
-            <ul>
-                <li><i class="fa-solid fa-house"></i> Dekorasi Kamar</li>
-                <li><i class="fa-solid fa-bath"></i> Dekorasi Kamar Mandi</li>
-                <li><i class="fa-solid fa-tree"></i> Dekorasi Halaman</li>
-                <li><i class="fa-solid fa-laptop"></i> Dekorasi Ruang Kerja</li>
-                <li><i class="fa-solid fa-couch"></i> Dekorasi Ruang Tamu</li>
-                <li><i class="fa-solid fa-utensils"></i> Dekorasi Ruang Makan</li>
-                <li><i class="fa-solid fa-calendar-check"></i> Dekorasi Acara</li>
-                <li><i class="fa-solid fa-store"></i> Dekorasi Cafe</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 <div id="kontak" class="kontak">
     <h2>Kontak Kami</h2>
 
@@ -435,7 +450,27 @@ button:hover {
     <img id="imgPreview">
     <span id="next" class="nav-btn" onclick="nextImage(event)">❯</span>
 </div>
+</div>
+    
+<div class="sidebar">
 
+    <div class="sidebar-box">
+        <h3>Layanan</h3>
+        <ul>
+            <li><i class="fa-solid fa-house"></i> Dekorasi Kamar</li>
+            <li><i class="fa-solid fa-bath"></i> Dekorasi Kamar Mandi</li>
+            <li><i class="fa-solid fa-tree"></i> Dekorasi Halaman</li>
+            <li><i class="fa-solid fa-laptop"></i> Dekorasi Ruang Kerja</li>
+            <li><i class="fa-solid fa-couch"></i> Dekorasi Ruang Tamu</li>
+            <li><i class="fa-solid fa-utensils"></i> Dekorasi Ruang Makan</li>
+            <li><i class="fa-solid fa-calendar-check"></i> Dekorasi Acara</li>
+            <li><i class="fa-solid fa-store"></i> Dekorasi Cafe</li>
+        </ul>
+    </div>
+
+</div>
+</div>
+    
 <script>
 
 const navLinks = document.querySelectorAll("nav a");
