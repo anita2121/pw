@@ -12,6 +12,7 @@ body {
     background: #f5f1ec;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -32,17 +33,20 @@ nav a {
     color: #333;
 }
 
+/* LOGO */
 .logo {
     display: block;
-    margin: 10px auto 10px; 
+    margin: 10px auto;
     width: 250px;
 }
 
+/* SECTION */
 .section {
     text-align: center;
     padding: 40px 20px;
 }
 
+/* TEKS */
 .tentang-text {
     max-width: 700px;
     margin: 10px auto 30px;
@@ -51,6 +55,7 @@ nav a {
     font-size: 15px;
 }
 
+/* VISI MISI */
 .visi-misi {
     display: flex;
     justify-content: center;
@@ -65,12 +70,14 @@ nav a {
     width: 250px;
 }
 
+/* VIDEO */
 .video-box video {
     width: 90%;
     max-width: 400px;
     border-radius: 15px;
 }
 
+/* GALERI */
 .gallery {
     display: flex;
     justify-content: center;
@@ -84,6 +91,7 @@ nav a {
     cursor: pointer;
 }
 
+/* BOX */
 .section-flex {
     display: flex;
     justify-content: center;
@@ -100,12 +108,14 @@ nav a {
     text-align: left;
 }
 
+/* KONTAK */
 .kontak {
     background: #e2b98f;
     text-align: center;
     padding: 30px;
 }
 
+/* FOOTER */
 .footer {
     background: #4b2e2e;
     color: white;
@@ -113,6 +123,7 @@ nav a {
     padding: 10px;
 }
 
+/* DESKRIPSI */
 #deskripsi {
     max-width: 600px;
     margin: 10px auto;
@@ -120,6 +131,7 @@ nav a {
     color: #555;
 }
 
+/* BUTTON */
 button {
     margin: 5px;
     padding: 8px 14px;
@@ -140,6 +152,7 @@ button:hover {
     color: white;
 }
 
+/* TOAST */
 #toast {
     position: fixed;
     bottom: 20px;
@@ -176,6 +189,7 @@ button:hover {
     border-radius: 10px;
 }
 
+/* CLOSE */
 #closeBtn {
     position: absolute;
     top: 20px;
@@ -185,6 +199,7 @@ button:hover {
     cursor: pointer;
 }
 
+/* NAV */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -196,11 +211,13 @@ button:hover {
 
 #prev { left: 20px; }
 #next { right: 20px; }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <div class="logo-text">Dear Space</div>
     <div>
@@ -213,14 +230,33 @@ button:hover {
     </div>
 </nav>
 
+<!-- LOGO -->
 <img src="foto1.png" class="logo">
 
+<!-- TENTANG -->
 <div id="tentang" class="section">
     <div class="tentang-text">
         <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna.</p>
     </div>
+
+    <div class="visi-misi">
+        <div class="card">
+            <h3>VISI</h3>
+            <p>Menjadi jasa dekorasi ruang yang kreatif.</p>
+        </div>
+
+        <div class="card">
+            <h3>MISI</h3>
+            <ul>
+                <li>Desain modern</li>
+                <li>Nyaman</li>
+                <li>Pelayanan terbaik</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
+<!-- GALERI -->
 <div id="galeri" class="section">
     <h2>Contoh Konsep</h2>
 
@@ -237,6 +273,7 @@ button:hover {
 
     <br>
 
+    <!-- VIDEO -->
     <div class="video-box" id="videoContainer">
         <video controls>
             <source src="video1.mp4">
@@ -245,11 +282,52 @@ button:hover {
 
     <br><br>
 
+    <!-- GAMBAR -->
     <div class="gallery" id="thumbnailContainer"></div>
 </div>
 
+<!-- LAYANAN & KONSEP -->
+<div class="section">
+    <div class="section-flex">
+        <div id="konsep" class="box">
+            <h3>Konsep</h3>
+            <ul>
+                <li>Minimalis</li>
+                <li>Aesthetic</li>
+                <li>Korean Style</li>
+                <li>Modern Klasik</li>
+            </ul>
+        </div>
+        
+        <div id="layanan" class="box">
+            <h3>Layanan</h3>
+            <ul>
+                <li>Dekorasi Kamar</li>
+                <li>Ruang Kerja</li>
+                <li>Ruang Tamu</li>
+                <li>Dekorasi Acara</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- KONTAK -->
+<div id="kontak" class="kontak">
+    <h2>Kontak Kami</h2>
+    <p>📱 0812-3456-7890</p>
+    <p>📷 @dearspace.id</p>
+    <p>📍 Tangerang</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Dear Space | All Rights Reserved
+</div>
+
+<!-- TOAST -->
 <div id="toast"></div>
 
+<!-- MODAL -->
 <div id="imgModal" onclick="closeImage()">
     <span id="closeBtn" onclick="closeImage()">✖</span>
     <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
@@ -347,4 +425,4 @@ function showToast(text) {
 </script>
 
 </body>
-</html>
+    </html>
