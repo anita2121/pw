@@ -36,7 +36,7 @@ nav a {
 /* LOGO */
 .logo {
     display: block;
-    margin: 10px auto 10px; 
+    margin: 10px auto;
     width: 250px;
 }
 
@@ -46,7 +46,7 @@ nav a {
     padding: 40px 20px;
 }
 
-/* TEKS TENTANG */
+/* TEKS */
 .tentang-text {
     max-width: 700px;
     margin: 10px auto 30px;
@@ -55,11 +55,7 @@ nav a {
     font-size: 15px;
 }
 
-.tentang-text p {
-    margin-bottom: 15px;
-}
-
-/* VISI MISI */
+/* CARD */
 .visi-misi {
     display: flex;
     justify-content: center;
@@ -95,7 +91,7 @@ nav a {
     cursor: pointer;
 }
 
-/* LAYANAN & KONSEP */
+/* BOX */
 .section-flex {
     display: flex;
     justify-content: center;
@@ -110,16 +106,6 @@ nav a {
     border-radius: 20px;
     width: 250px;
     text-align: left;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    background: white;
-    color: #c97f4f;
-    border-radius: 10px;
-    cursor: pointer;
 }
 
 /* KONTAK */
@@ -137,54 +123,51 @@ button {
     padding: 10px;
 }
 
-/* OVERLAY */
-#overlay {
+/* MODAL IMAGE */
+#imgModal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.85);
     display: none;
-    z-index: 90;
-}
-
-/* MODAL */
-#modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    display: none;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
-    text-align: center;
-    width: 300px;
 }
 
-/* TOAST */
-#toast {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #333;
-    color: white;
-    padding: 15px;
+#imgModal img {
+    max-width: 80%;
+    max-height: 80%;
     border-radius: 10px;
-    display: none;
-    z-index: 999;
+}
+
+/* BUTTON NEXT PREV */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
 }
 </style>
 
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-text">Dear Space</div>
-
     <div>
         <a href="#">Home</a>
         <a href="#tentang">Tentang</a>
@@ -195,15 +178,11 @@ button {
     </div>
 </nav>
 
-<!-- LOGO -->
 <img src="foto1.png" class="logo">
 
-<!-- TENTANG -->
 <div id="tentang" class="section">
     <div class="tentang-text">
-        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna.</p>
-        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang.</p>
-        <p>Kami menggabungkan konsep minimalis, aesthetic, Korean style, dan earth tone.</p>
+        <p><b>Dear Space</b> adalah jasa dekorasi interior...</p>
     </div>
 
     <div class="visi-misi">
@@ -223,7 +202,6 @@ button {
     </div>
 </div>
 
-<!-- GALERI -->
 <div id="galeri" class="section">
     <h2>Contoh Konsep</h2>
 
@@ -236,14 +214,13 @@ button {
     <br><br>
 
     <div class="gallery">
-        <img src="foto2.jpg" onclick="openModal()">
-        <img src="foto3.jpg" onclick="openModal()">
-        <img src="foto4.jpg" onclick="openModal()">
-        <img src="foto5.jpg" onclick="openModal()">
+        <img src="foto2.jpg" onclick="openImage(0)">
+        <img src="foto3.jpg" onclick="openImage(1)">
+        <img src="foto4.jpg" onclick="openImage(2)">
+        <img src="foto5.jpg" onclick="openImage(3)">
     </div>
 </div>
 
-<!-- LAYANAN & KONSEP -->
 <div class="section">
     <div class="section-flex">
         <div id="konsep" class="box">
@@ -264,12 +241,10 @@ button {
                 <li>Ruang Tamu</li>
                 <li>Dekorasi Acara</li>
             </ul>
-            <button onclick="openModal()">Pesan Sekarang</button>
         </div>
     </div>
 </div>
 
-<!-- KONTAK -->
 <div id="kontak" class="kontak">
     <h2>Kontak Kami</h2>
     <p>📱 0812-3456-7890</p>
@@ -277,46 +252,41 @@ button {
     <p>📍 Tangerang</p>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    © 2026 Dear Space | All Rights Reserved
+    © 2026 Dear Space
 </div>
-
-<!-- OVERLAY -->
-<div id="overlay" onclick="closeModal()"></div>
 
 <!-- MODAL -->
-<div id="modal">
-    <h2>Form Pemesanan</h2>
-    <p>Pilih layanan yang kamu inginkan</p>
-
-    <button onclick="showToast()">Kirim</button>
-    <br><br>
-    <button onclick="closeModal()">Tutup</button>
+<div id="imgModal" onclick="closeImage()">
+    <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
+    <img id="imgPreview">
+    <span id="next" class="nav-btn" onclick="nextImage(event)">❯</span>
 </div>
 
-<!-- TOAST -->
-<div id="toast">Pesanan berhasil dikirim!</div>
-
-<!-- JAVASCRIPT -->
 <script>
-function openModal() {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("overlay").style.display = "block";
+let images = ["foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg"];
+let index = 0;
+
+function openImage(i) {
+    index = i;
+    document.getElementById("imgModal").style.display = "flex";
+    document.getElementById("imgPreview").src = images[index];
 }
 
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-    document.getElementById("overlay").style.display = "none";
+function closeImage() {
+    document.getElementById("imgModal").style.display = "none";
 }
 
-function showToast() {
-    let toast = document.getElementById("toast");
-    toast.style.display = "block";
+function nextImage(event) {
+    event.stopPropagation();
+    index = (index + 1) % images.length;
+    document.getElementById("imgPreview").src = images[index];
+}
 
-    setTimeout(() => {
-        toast.style.display = "none";
-    }, 3000);
+function prevImage(event) {
+    event.stopPropagation();
+    index = (index - 1 + images.length) % images.length;
+    document.getElementById("imgPreview").src = images[index];
 }
 </script>
 
