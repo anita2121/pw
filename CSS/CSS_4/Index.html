@@ -43,31 +43,42 @@ nav a {
 /* SECTION */
 .section {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 /* TEKS */
 .tentang-text {
-    max-width: 700px;
-    margin: 10px auto 30px;
+    max-width: 750px;
+    margin: 10px auto 40px;
     text-align: justify;
-    line-height: 1.7;
+    line-height: 1.8;
     font-size: 15px;
 }
 
-/* VISI MISI */
+/* VISI MISI (UPDATED) */
 .visi-misi {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .card {
     background: #e7c3a1;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
-    width: 250px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #4b2e2e;
+}
+
+.card ul {
+    padding-left: 18px;
 }
 
 /* VIDEO */
@@ -217,7 +228,6 @@ button:hover {
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-text">Dear Space</div>
     <div>
@@ -230,10 +240,8 @@ button:hover {
     </div>
 </nav>
 
-<!-- LOGO -->
 <img src="foto1.png" class="logo">
 
-<!-- TENTANG -->
 <div id="tentang" class="section">
     <div class="tentang-text">
         <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
@@ -243,24 +251,29 @@ button:hover {
         <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
     </div>
 
+    <!-- VISI MISI UPDATED -->
     <div class="visi-misi">
         <div class="card">
             <h3>VISI</h3>
-            <p>Menjadi jasa dekorasi ruang yang kreatif.</p>
+            <p>
+                Menjadi jasa dekorasi interior terpercaya yang menghadirkan ruang
+                estetik, nyaman, dan sesuai karakter setiap klien.
+            </p>
         </div>
 
         <div class="card">
             <h3>MISI</h3>
             <ul>
-                <li>Desain modern</li>
-                <li>Nyaman</li>
-                <li>Pelayanan terbaik</li>
+                <li>Menyediakan desain interior modern dan kekinian</li>
+                <li>Mengutamakan kenyamanan dan fungsi ruang</li>
+                <li>Memberikan pelayanan terbaik kepada pelanggan</li>
+                <li>Menghadirkan konsep unik dan personal</li>
             </ul>
         </div>
     </div>
 </div>
 
-<!-- GALERI -->
+<!-- GALERI tetap sama -->
 <div id="galeri" class="section">
     <h2>Contoh Konsep</h2>
 
@@ -277,7 +290,6 @@ button:hover {
 
     <br>
 
-    <!-- VIDEO -->
     <div class="video-box" id="videoContainer">
         <video controls>
             <source src="video1.mp4">
@@ -286,14 +298,13 @@ button:hover {
 
     <br><br>
 
-    <!-- GAMBAR -->
     <div class="gallery" id="thumbnailContainer"></div>
 </div>
 
-<!-- LAYANAN & KONSEP -->
+<!-- SISANYA TETAP -->
 <div class="section">
     <div class="section-flex">
-        <div id="konsep" class="box">
+        <div class="box">
             <h3>Konsep</h3>
             <ul>
                 <li>Minimalis</li>
@@ -303,7 +314,7 @@ button:hover {
             </ul>
         </div>
         
-        <div id="layanan" class="box">
+        <div class="box">
             <h3>Layanan</h3>
             <ul>
                 <li>Dekorasi Kamar</li>
@@ -315,7 +326,6 @@ button:hover {
     </div>
 </div>
 
-<!-- KONTAK -->
 <div id="kontak" class="kontak">
     <h2>Kontak Kami</h2>
     <p>📱 0812-3456-7890</p>
@@ -323,12 +333,10 @@ button:hover {
     <p>📍 Tangerang</p>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
     © 2026 Dear Space | All Rights Reserved
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
 <!-- MODAL -->
@@ -366,9 +374,7 @@ window.onload = () => {
 
 function ubahKonsep(nama, el) {
     currentImages = dataKonsep[nama];
-
     document.getElementById("deskripsi").innerText = deskripsiKonsep[nama];
-
     loadImages(currentImages);
 
     if (nama === "modernklasik") {
@@ -429,4 +435,4 @@ function showToast(text) {
 </script>
 
 </body>
-    </html>
+        </html>
