@@ -23,6 +23,13 @@ nav {
     background: white;
 }
 
+nav a.active {
+    color: #c97f4f;
+    font-weight: bold;
+    border-bottom: 2px solid #c97f4f;
+    padding-bottom: 5px;
+}
+
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -30,11 +37,14 @@ nav {
     }
 
     nav div:last-child {
+        display: flex;
         flex-direction: column;
         width: 100%;
+        gap: 5px;
     }
 
     nav a {
+        margin-left: 0;
         padding: 5px 0;
     }
 }
@@ -43,6 +53,7 @@ nav {
     font-weight: 900;
     font-size: 26px;
     color: #c97f4f;
+    line-height: 1;
 }
 
 nav a {
@@ -391,6 +402,15 @@ button:hover {
 </div>
 
 <script>
+
+const navLinks = document.querySelectorAll("nav a");
+
+   navLinks.forEach(link => {
+      link.addEventListener("click", function() {
+        navLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+      });
+   });
 const basePath = "img/";
 
 const dataKonsep = {
