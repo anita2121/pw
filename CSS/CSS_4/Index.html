@@ -68,13 +68,36 @@ nav a.active {
 
 .sidebar-box{
     background: #e7c3a1;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .sidebar-box h3{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* BIKIN LAYANAN RAPI LAGI */
+.sidebar-box ul{
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-box li{
+    background: #f5f1ec;
     margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sidebar-box li:hover{
+    background: #c97f4f;
+    color: white;
 }
     
 /* ===== HP MODE ===== */
@@ -351,9 +374,9 @@ button:hover {
 <div class="container-layout">
 
     <!-- KIRI (ISI UTAMA) -->
-<div class="main-content">
+ <div class="main-content">
         
-<iframe src="Index2.html" style="
+  <iframe src="Index2.html" style="
     position:fixed;
     top:0;
     left:0;
@@ -362,97 +385,97 @@ button:hover {
     border:none;
     z-index:0;
     pointer-events:none;
-"></iframe>
+  "></iframe>
     
-<nav>
-    <div class="logo-text">Dear Space</div>
-    <div>
+  <nav>
+      <div class="logo-text">Dear Space</div>
+     <div>
         <a href="#">Home</a>
         <a href="#tentang">Tentang</a>
         <a href="#galeri">Contoh Konsep</a>
         <a href="#layanan">Layanan</a>
         <a href="#kontak">Kontak</a>
-    </div>
-</nav>
+     </div>
+  </nav>
 
-<img src="foto1.png" class="logo">
+  <img src="foto1.png" class="logo">
 
-<div id="tentang" class="section">
-    <div class="tentang-text">
-        <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
+  <div id="tentang" class="section">
+      <div class="tentang-text">
+          <p><b>Dear Space</b> adalah jasa dekorasi interior yang hadir untuk menciptakan ruang yang nyaman, estetik, dan penuh makna. Kami percaya bahwa setiap ruang memiliki cerita, dan setiap orang berhak memiliki tempat yang dapat mencerminkan kepribadian serta memberikan rasa nyaman dalam beraktivitas sehari-hari.</p>
 
-        <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang yang terus berkembang, terutama gaya minimalis dan aesthetic yang saat ini banyak diminati. Berawal dari ide sederhana untuk menata ruang agar lebih rapi dan indah, Dear Space kemudian berkembang menjadi layanan dekorasi yang membantu berbagai kebutuhan.</p>
+          <p>Dear Space berawal dari ketertarikan terhadap dunia desain dan dekorasi ruang yang terus berkembang, terutama gaya minimalis dan aesthetic yang saat ini banyak diminati. Berawal dari ide sederhana untuk menata ruang agar lebih rapi dan indah, Dear Space kemudian berkembang menjadi layanan dekorasi yang membantu berbagai kebutuhan.</p>
 
-        <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
-    </div>
-    <div class="visi-misi">
-        <div class="card">
-            <h3>VISI</h3>
-            <p>Menjadi jasa dekorasi interior terpercaya yang menghadirkan ruang estetik dan nyaman.</p>
-        </div>
+          <p>Kami menggabungkan berbagai konsep seperti minimalis, aesthetic, Korean style, dan earth tone untuk menciptakan suasana yang tidak hanya indah secara visual, tetapi juga memberikan ketenangan dan kehangatan.</p>
+      </div>
+      <div class="visi-misi">
+          <div class="card">
+              <h3>VISI</h3>
+              <p>Menjadi jasa dekorasi interior terpercaya yang menghadirkan ruang estetik dan nyaman.</p>
+          </div>
 
-        <div class="card">
-            <h3>MISI</h3>
-            <ul>
-                <li>Desain modern dan kekinian</li>
-                <li>Utamakan kenyamanan</li>
-                <li>Pelayanan terbaik</li>
-                <li>Konsep unik dan personal</li>
-            </ul>
-        </div>
-    </div>
-</div>
+          <div class="card">
+              <h3>MISI</h3>
+              <ul>
+                  <li>Desain modern dan kekinian</li>
+                  <li>Utamakan kenyamanan</li>
+                  <li>Pelayanan terbaik</li>
+                  <li>Konsep unik dan personal</li>
+              </ul>
+           </div>
+      </div>
+  </div>
 
-<div id="galeri" class="section">
-    <h2>Contoh Konsep</h2>
+  <div id="galeri" class="section">
+      <h2>Contoh Konsep</h2>
 
-    <p id="deskripsi">
+      <p id="deskripsi">
         Konsep modern klasik menggabungkan kemewahan klasik dengan sentuhan modern.
-    </p>
+      </p>
 
-    <div>
+      <div>
         <button onclick="ubahKonsep('minimalis', this)">Minimalis</button>
         <button onclick="ubahKonsep('aesthetic', this)">Aesthetic</button>
         <button onclick="ubahKonsep('koreanstyle', this)">Korean Style</button>
         <button onclick="ubahKonsep('modernklasik', this)">Modern Klasik</button>
-    </div>
+      </div>
 
-    <br>
+      <br>
 
-    <div class="video-box" id="videoContainer">
-        <video controls>
+      <div class="video-box" id="videoContainer">
+          <video controls>
             <source src="video1.mp4">
-        </video>
-    </div>
+          </video>
+      </div>
 
-    <br><br>
+      <br><br>
 
-    <div class="gallery" id="thumbnailContainer"></div>
-</div>
+      <div class="gallery" id="thumbnailContainer"></div>
+  </div>
 
-<div id="kontak" class="kontak">
-    <h2>Kontak Kami</h2>
+  <div id="kontak" class="kontak">
+      <h2>Kontak Kami</h2>
 
-    <p><i class="fa-solid fa-phone"></i> 0821-4006-8935</p>
-    <p><i class="fa-brands fa-instagram"></i> @dearspace.id</p>
-    <p><i class="fa-solid fa-location-dot"></i> Cibubur</p>
-</div>
+      <p><i class="fa-solid fa-phone"></i> 0821-4006-8935</p>
+      <p><i class="fa-brands fa-instagram"></i> @dearspace.id</p>
+      <p><i class="fa-solid fa-location-dot"></i> Cibubur</p>
+  </div>
 
-<div class="footer">
+  <div class="footer">
     © 2026 Dear Space | All Rights Reserved
-</div>
+  </div>
 
-<div id="toast"></div>
+  <div id="toast"></div>
 
-<div id="imgModal" onclick="closeImage()">
-    <span id="closeBtn" onclick="closeImage()">✖</span>
-    <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
-    <img id="imgPreview">
-    <span id="next" class="nav-btn" onclick="nextImage(event)">❯</span>
-</div>
-</div>
+  <div id="imgModal" onclick="closeImage()">
+      <span id="closeBtn" onclick="closeImage()">✖</span>
+      <span id="prev" class="nav-btn" onclick="prevImage(event)">❮</span>
+      <img id="imgPreview">
+      <span id="next" class="nav-btn" onclick="nextImage(event)">❯</span>
+  </div>
+  </div>
     
-<div class="sidebar">
+  <div class="sidebar">
 
     <div class="sidebar-box">
         <h3>Layanan</h3>
@@ -467,20 +490,19 @@ button:hover {
             <li><i class="fa-solid fa-store"></i> Dekorasi Cafe</li>
         </ul>
     </div>
-
-</div>
-</div>
+ </div> </div>
     
 <script>
 
 const navLinks = document.querySelectorAll("nav a");
 
-   navLinks.forEach(link => {
-      link.addEventListener("click", function() {
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
         navLinks.forEach(l => l.classList.remove("active"));
         this.classList.add("active");
-      });
-   });
+    });
+});
+    
 const basePath = "img/";
 
 const dataKonsep = {
