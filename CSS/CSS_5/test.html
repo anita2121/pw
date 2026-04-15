@@ -13,6 +13,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f5f1ec;
+    overflow-x: hidden;
+
 }
     
 .logo-text span {
@@ -37,6 +39,9 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
 }
 
 /* MENU KANAN */
@@ -359,7 +364,11 @@ h2{
 .kontak {
     background: #e2b98f;
     text-align: center;
-    padding: 30px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    padding: 30px 20px;
+    box-sizing: border-box;
 }
 
 .kontak i {
@@ -872,4 +881,4 @@ modal.onclick = function(e) {
     </html>
 
 
-  
+    
