@@ -158,9 +158,17 @@ nav a.active {
 
     /* menu kanan paksa mentok */
     nav div:last-child {
-        display: flex;
-        gap: 12px;
-        margin-left: auto;
+    display: flex;
+    gap: 26px;
+
+    overflow-x: auto;   /* 🔥 ini kunci */
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+   }
+
+    nav div:last-child::-webkit-scrollbar {
+    display: none; /* Chrome */
     }
 
     nav a {
