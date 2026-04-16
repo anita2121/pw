@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.login-container {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79,172,254,0.5);
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Login button */
+.btn-login {
+    background: #4facfe;
+    color: white;
+}
+
+.btn-login:hover {
+    background: #00c6ff;
+}
+
+/* Cancel button */
+.btn-cancel {
+    background: #ddd;
+}
+
+.btn-cancel:hover {
+    background: #bbb;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Masukkan username">
+    </div>
+
+    <div class="input-group">
+        <label>Sandi</label>
+        <input type="password" id="password" placeholder="Masukkan sandi">
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-login" onclick="login()">Login</button>
+        <button class="btn-cancel" onclick="cancel()">Cancel</button>
+    </div>
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "" || pass === "") {
+        alert("Harap isi username dan sandi!");
+    } else {
+        alert("Login berhasil!");
+    }
+}
+
+function cancel() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
+
+</body>
+</html>
