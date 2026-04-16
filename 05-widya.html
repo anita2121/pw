@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM & JS Vanilla</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .card { border: 1px solid #ccc; padding: 20px; border-radius: 8px; width: 300px; }
+        .input-group { margin-bottom: 10px; }
+        input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        .button-group { display: flex; gap: 10px; margin-top: 15px; }
+        button { cursor: pointer; padding: 8px 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h3>Login Form</h3>
+        
+        <div class="input-group">
+            <label for="US">Username:</label>
+            <input type="text" id="US" placeholder="Masukkan username">
+        </div>
+
+        <div class="input-group">
+            <label for="S">Sandi:</label>
+            <input type="password" id="S" placeholder="Masukkan sandi">
+        </div>
+
+        <div class="button-group">
+            <button id="BtnLogin">Login</button>
+            <button id="BtnCancel">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+// 1. DOM Selector (Mengambil elemen dari HTML)
+const btnLogin = document.getElementById("BtnLogin");
+const US = document.getElementById("US");
+
+// 2. Event Listener (Menunggu aksi klik)
+// Format: element.addEventListener("event", fungsi)
+btnLogin.addEventListener("click", jalankanFungsi);
+
+// Fungsi yang dijalankan saat tombol diklik
+function jalankanFungsi() {
+    // Sesuai coretan: US.value = "username"
+    // Ini akan otomatis mengisi field username saat tombol login diklik
+    US.value = "User Terisi!";
+    
+    alert("Tombol Login diklik! Username telah otomatis diisi.");
+    console.log("Fungsi berhasil dijalankan.");
+}
+
+// Tambahan: Fungsi untuk tombol cancel (opsional)
+const btnCancel = document.getElementById("BtnCancel");
+btnCancel.addEventListener("click", () => {
+    US.value = "";
+    document.getElementById("S").value = "";
+});
