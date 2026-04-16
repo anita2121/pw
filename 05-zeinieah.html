@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Modul DOM & Event</title>
+</head>
+<body>
+
+    <h1>Data Mining Sederhana</h1>
+    
+    <input type="text" id="cari" placeholder="Masukkan data...">
+    <button class="btn-submit">Ambil Data</button>
+    
+    <div id="hasil-mining"></div>
+
+    <script>
+        // 1. DOM SELECTOR
+        const inputCari = document.getElementById('cari');
+        const tombolAksi = document.querySelector('.btn-submit');
+        const kontainerHasil = document.querySelector('#hasil-mining');
+
+        // 2. EVENT LISTENER
+        tombolAksi.addEventListener('click', function() {
+            
+            // 3. DATA MINING (Mengambil .value)
+            const dataInput = inputCari.value;
+
+            if (dataInput !== "") {
+                // 4. FEEDBACK (Alert & Console)
+                console.log("Data ditambang:", dataInput);
+                alert("Data berhasil diambil: " + dataInput);
+                
+                // Menampilkan ke layar
+                kontainerHasil.innerText = "Hasil: " + dataInput;
+            } else {
+                alert("Isi dulu kolomnya!");
+            }
+        });
+    </script>
+
+</body>
+</html>
