@@ -1,0 +1,28 @@
+1. Point 
+Inti dari materi ini adalah Manipulasi DOM (Document Object Model) menggunakan JavaScript Vanilla. Ini adalah teknik dasar untuk membuat halaman web menjadi dinamis tanpa bantuan framework luar (seperti React atau Vue). 
+Tujuannya adalah untuk menghubungkan elemen visual (HTML/CSS) dengan logika (JavaScript) agar bisa merespons tindakan pengguna secara real-time.
+
+2. Reason
+  - Aksesibilitas: JavaScript perlu "tangan" untuk menyentuh HTML; tangan itu adalah Selector.
+  - Responsivitas: Halaman web harus "mendengar" pengguna; itulah fungsi Event Listener.
+  - Dinamisme: Data di layar harus bisa berubah tanpa muat ulang halaman; inilah hasil dari Data Mining/Manipulasi Value.
+    Performa: Menggunakan JS Vanilla (JavaScript murni) jauh lebih cepat dan ringan bagi browser dibandingkan menggunakan library besar jika tugasnya sederhana
+
+E: Evidence & Explanation (Bukti & Penjelasan)
+1. DOM Selector
+Ini adalah cara JavaScript "menemukan" elemen di dalam HTML.
+getElementById("id"): Cara paling cepat dan spesifik karena ID bersifat unik.
+querySelector: Lebih fleksibel karena bisa menggunakan sintaks CSS (Class, ID, atau Tag).
+2. Event Listener
+Mekanisme untuk "mendengarkan" interaksi pengguna.
+Fungsi/Callback: Kode yang akan dijalankan ketika sebuah aksi terjadi.
+Aksi: Seperti click, submit, atau hover. Di papan tulis tertulis penggunaan alert dan console sebagai cara untuk memverifikasi apakah event sudah berjalan.
+3. Data Mining (Value)
+Setelah elemen ditemukan (Selector) dan aksi terjadi (Event), kita seringkali perlu mengambil data dari elemen tersebut, misalnya mengambil teks yang diketik pengguna di dalam kolom input menggunakan properti .value.
+
+4. Point (Kesimpulan)
+Memahami alur Selector -> Event -> Manipulation (Data Mining) adalah fondasi utama pengembangan web. Dengan JS Vanilla, Anda memiliki kontrol penuh atas setiap elemen di halaman. Anda memulai dengan menunjuk objeknya (Selector), 
+menunggu aksinya (Event), lalu mengeksekusi perubahan datanya (Value).
+
+
+
