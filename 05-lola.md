@@ -114,4 +114,3 @@ document.getElementById("cek").addEventListener("click", function() {
 });
 Point (Penegasan) :
 Web interaktif = DOM Selector + Event Listener + Manipulasi Data bekerja bersama.
-
