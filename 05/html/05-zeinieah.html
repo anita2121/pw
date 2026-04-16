@@ -2,39 +2,74 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Modul DOM & Event</title>
+    <title>Halaman Login DOM</title>
+    <style>
+        /* CSS Sederhana agar tampilannya mirip kotak di sketsa */
+        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 50px; }
+        .login-box { border: 1px solid black; padding: 20px; width: 300px; text-align: center; }
+        .input-group { margin-bottom: 10px; text-align: left; display: flex; align-items: center; }
+        .input-group label { width: 80px; }
+        .input-group input { flex-grow: 1; padding: 5px; }
+        .button-group { margin-top: 15px; display: flex; justify-content: space-around; }
+        button { padding: 5px 15px; cursor: pointer; }
+    </style>
 </head>
 <body>
 
-    <h1>Data Mining Sederhana</h1>
-    
-    <input type="text" id="cari" placeholder="Masukkan data...">
-    <button class="btn-submit">Ambil Data</button>
-    
-    <div id="hasil-mining"></div>
+    <div class="login-box">
+        
+        <div class="input-group">
+            <label for="US">Usernam</label>
+            <input type="text" id="US" placeholder="User name">
+        </div>
+
+        <div class="input-group">
+            <label for="S">Sandi</label>
+            <input type="password" id="S">
+        </div>
+
+        <div class="button-group">
+            <button id="Btn login">login</button>
+            
+            <button id="Btn Cari1">cari</button>
+        </div>
+
+    </div>
 
     <script>
-        // 1. DOM SELECTOR
-        const inputCari = document.getElementById('cari');
-        const tombolAksi = document.querySelector('.btn-submit');
-        const kontainerHasil = document.querySelector('#hasil-mining');
+        // 1. DOM SELECTOR (Sesuai ID di sketsa)
+        const inputUsername = document.getElementById('US');
+        const inputSandi = document.getElementById('S');
+        
+        // PENTING: Karena ID-nya pakai spasi, kita gunakan querySelector
+        const tombolLogin = document.querySelector('#Btn\\ login'); 
+        const tombolCari = document.querySelector('#Btn\\ Cari1'); 
 
-        // 2. EVENT LISTENER
-        tombolAksi.addEventListener('click', function() {
-            
-            // 3. DATA MINING (Mengambil .value)
-            const dataInput = inputCari.value;
+        // 2. EVENT LISTENER (Logika Tombol)
 
-            if (dataInput !== "") {
-                // 4. FEEDBACK (Alert & Console)
-                console.log("Data ditambang:", dataInput);
-                alert("Data berhasil diambil: " + dataInput);
-                
-                // Menampilkan ke layar
-                kontainerHasil.innerText = "Hasil: " + dataInput;
+        // Tombol Login: Melakukan "Data Mining" value
+        tombolLogin.addEventListener('click', function() {
+            // 3. DATA MINING (.value)
+            const username = inputUsername.value;
+            const sandi = inputSandi.value;
+
+            console.log("Mencoba Login...");
+            console.log("Username ditambang:", username);
+            console.log("Sandi ditambang:", sandi);
+
+            if (username === "admin" && sandi === "123") {
+                alert("Login Sukses!");
             } else {
-                alert("Isi dulu kolomnya!");
+                alert("Username/Sandi Salah (Cek Console).");
             }
+        });
+
+        // Tombol Cari: Menghapus input (opsional, sebagai feedback)
+        tombolCari.addEventListener('click', function() {
+            inputUsername.value = "";
+            inputSandi.value = "";
+            alert("Input dibersihkan.");
+            console.log("Form dibersihkan");
         });
     </script>
 
