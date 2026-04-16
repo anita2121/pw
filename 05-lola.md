@@ -1,14 +1,14 @@
-Point :
+- Point :
 DOM Selector digunakan untuk mengambil dan mengakses elemen HTML menggunakan JavaScript agar bisa dimanipulasi.
 
-Reason :
+- Reason :
 JavaScript tidak bisa langsung mengubah HTML kalau tidak “menemukan” elemennya dulu.
 Karena itu, DOM Selector berfungsi sebagai jembatan antara HTML dan JavaScript.
 
-Tanpa DOM Selector:
+- Tanpa DOM Selector:
 JS tidak tahu elemen mana yang mau diubah
 
-Example :
+- Example :
 <input type="text" id="nama">
 <p id="hasil"></p>
 <button onclick="proses()">Klik</button>
@@ -17,33 +17,35 @@ function proses() {
     let isi = input.value; // ambil nilai
     document.getElementById("hasil").innerHTML = isi; // tampilkan
 }
-Point (Penegasan) :
+- Point (Penegasan) :
 Jadi, DOM Selector = alat untuk mengambil elemen HTML agar bisa diproses oleh JavaScript.
 
-Tambahan penting :
+- Tambahan penting :
 Jenis selector yang sering dipakai:
 getElementById() → 1 elemen (paling sering)
 querySelector() → fleksibel (pakai CSS)
 querySelectorAll() → banyak elemen
 2. Event Listener (onclick, onsubmit, dll)
-Point :
-
+  
+- Point :
 Event Listener digunakan untuk menjalankan kode JavaScript saat terjadi aksi dari user.
 
-Reason :
+- Reason :
 Web itu interaktif. User:
 klik tombol
 isi form
 kirim data
 
-Tanpa event:
+- Tanpa event:
 halaman jadi statis (tidak bisa merespon)
-Example :
+
+- Example :
 <button id="btn">Klik Saya</button>
 <p id="teks"></p>
 document.getElementById("btn").addEventListener("click", function() {
     document.getElementById("teks").innerHTML = "Tombol ditekan!";
 });
+
   Contoh onsubmit:
 <form id="formku">
     <input type="text">
@@ -53,10 +55,11 @@ document.getElementById("formku").addEventListener("submit", function(e) {
     e.preventDefault();
     alert("Form berhasil dikirim");
 });
-Point (Penegasan)
+
+- Point (Penegasan)
 Event Listener = pemicu aksi yang membuat halaman web menjadi hidup dan responsif.
-Tambahan penting:
-Jenis event umum:
+- Tambahan penting:
+- Jenis event umum:
 click → klik
 submit → kirim form
 input → saat mengetik
@@ -66,14 +69,15 @@ change → saat nilai berubah
 Point :
 Manipulasi data adalah proses mengubah isi atau tampilan elemen HTML berdasarkan input user.
 
-Reason :
+- Reason :
 Tujuan utama web interaktif adalah:
 merespon input user dan menampilkan hasilnya
 
-Contoh :
+- Contoh :
 input nama → tampilkan sapaan
 input angka → tampilkan hasil perhitungan
-Example
+
+- Example :
 <input type="text" id="nama">
 <button onclick="tampil()">Tampilkan</button>
 <p id="output"></p>
@@ -81,9 +85,10 @@ function tampil() {
     let nama = document.getElementById("nama").value;
     document.getElementById("output").innerHTML = "Halo " + nama;
 }
-Point (Penegasan)
+- Point (Penegasan)
 Manipulasi data = mengubah tampilan web berdasarkan data yang dimasukkan user.
-Tambahan penting:
+
+- Tambahan penting:
 Properti yang sering dipakai:
 .value → ambil isi input
 .innerHTML → ubah isi HTML
@@ -93,14 +98,14 @@ Properti yang sering dipakai:
 Point
 Ketiga konsep ini bekerja bersama untuk membuat web interaktif.
 
-Reason :
+- Reason :
 Alur logisnya selalu sama:
 Ambil elemen (DOM)
 Tunggu aksi (Event)
 Proses data
 Tampilkan hasil (Manipulasi)
 
-Example :
+- Example :
 <input type="number" id="nilai">
 <button id="cek">Cek</button>
 <p id="hasil"></p>
@@ -112,5 +117,6 @@ document.getElementById("cek").addEventListener("click", function() {
         document.getElementById("hasil").innerHTML = "Tidak Lulus";
     }
 });
-Point (Penegasan) :
+
+- Point (Penegasan) :
 Web interaktif = DOM Selector + Event Listener + Manipulasi Data bekerja bersama.
