@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistem Render Modular</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .card {
+      border: 1px solid #333;
+      padding: 10px;
+      margin: 10px 0;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Sistem Render Modular</h2>
+
+  <!-- BUTTON -->
+  <button onclick="render('table')">Render Table</button>
+  <button onclick="render('card')">Render Card</button>
+  <button onclick="render('list')">Render List</button>
+
+  <!-- OUTPUT -->
+  <div id="output"></div>
+
+  <script>
+    // DATA (JSON)
+    const data = [
+      { id: 1, nama: "Satu" },
+      { id: 2, nama: "Dua" },
+      { id: 3, nama: "Tiga" }
+    ];
+
+    // MAIN FUNCTION (DRY)
+    function render(type) {
+      const output = document.getElementById("output");
+      output.innerHTML = generateHTML(type);
+    }
+
+    // GENERATOR (MODULAR)
+    function generateHTML(type) {
+      if (type === "table") return renderTable();
+      if (type === "card") return renderCard();
+      if (type === "list") return renderList();
+    }
+
+    // TABLE
+    function renderTable() {
+      let html = `
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nama</th>
+          </tr>
+      `;
+
+      data.forEach(item => {
+        html += `
+          <tr>
+            <td>${item.id}</td>
+            <td>${item.nama}</td>
+          </tr>
+        `;
+      });
+
+      html += `</table>`;
+      return html;
+    }
+
+    // CARD
+    function renderCard() {
+      let html = "";
+
+      data.forEach(item => {
+        html += `
+          <div class="card">
+            <p><b>ID:</b> ${item.id}</p>
+            <p><b>Nama:</b> ${item.nama}</p>
+          </div>
+        `;
+      });
+
+      return html;
+    }
+
+    // LIST
+    function renderList() {
+      let html = `<ul>`;
+
+      data.forEach(item => {
+        html += `<li>${item.id} - ${item.nama}</li>`;
+      });
+
+      html += `</ul>`;
+      return html;
+    }
+  </script>
+
+</body>
+</html>
